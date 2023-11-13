@@ -14,7 +14,7 @@ public class AutenticacaoService {
 
     public Usuario autenticar(String nomeUsuario, String senha) {
         for (Usuario usuario : usuarios) {
-            if (usuario.getNomeUsuario().equals(nomeUsuario) && usuario.getSenha().equals(senha)) {
+            if (usuario.getNome().equals(nomeUsuario) && usuario.getSenha().equals(senha)) {
                 return usuario;
             }
         }

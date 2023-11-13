@@ -1,16 +1,22 @@
 package model;
 
 public class Usuario {
-    private String nomeUsuario;
+    private String nome;
     private String senha;
+    private String dataDeNascimento;
+    private String email;
+
+    public void cadastrar(){
+
+    }
 
     public Usuario(String nomeUsuario, String senha) {
-        this.nomeUsuario = nomeUsuario;
+        this.nome = nomeUsuario;
         this.senha = senha;
     }
 
-    public String getNomeUsuario() {
-        return nomeUsuario;
+    public String getNome() {
+        return nome;
     }
 
     public String getSenha() {
