@@ -1,9 +1,19 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package view.JavaCRUD;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.*; 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import DAO.UserDAO;
+import model.User;
+/**
+ *
+ * @author arian
+ */
 public class FuncGoverno extends JFrame{
     public FuncGoverno(){
         
@@ -111,11 +121,16 @@ public class FuncGoverno extends JFrame{
             }
             int resposta = JOptionPane.showConfirmDialog(null, "Confirma o cadastro?", "Confirmação", JOptionPane.YES_NO_OPTION);
             
-            
+            UserDAO userDAO = new UserDAO();
+            // Configurar os dados no objeto User
+            User user = new User();
+            user.setNome(nome);
+            user.setEmail(email);
+            user.setSenha(senha);
             
             if (resposta == JOptionPane.YES_OPTION) {
                 
-               
+            userDAO.save(user);    
             // Fechar a janela
             dispose();
                 }
