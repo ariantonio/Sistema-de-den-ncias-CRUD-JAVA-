@@ -1,5 +1,17 @@
-package view;
-import javax.swing.*;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
+ */
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package view.JavaCRUD;
+
+/**
+ *
+ * @author arian
+ */
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -8,9 +20,10 @@ import java.awt.event.ActionListener;
 
 public class TelaDeLogin extends JFrame{
     public static void main(String[] args) {
+        
         JFrame frame = new JFrame("Tela de Login");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(400, 230);
+        frame.setSize(400, 400);
         frame.setResizable(false);
 
         JPanel panel = new JPanel();
@@ -26,27 +39,50 @@ public class TelaDeLogin extends JFrame{
         panel.add(titleLabel);
 
         JLabel usernameLabel = new JLabel("Nome de Usuário:");
-        usernameLabel.setBounds(50, 60, 120, 20);
+        usernameLabel.setBounds(50, 60, 120, 60);
         panel.add(usernameLabel);
 
         JTextField usernameField = new JTextField(20);
-        usernameField.setBounds(180, 60, 150, 20);
+        usernameField.setBounds(180, 80, 150, 20);
         panel.add(usernameField);
 
         JLabel passwordLabel = new JLabel("Senha:");
-        passwordLabel.setBounds(50, 90, 120, 20);
+        passwordLabel.setBounds(50, 90, 120, 60);
         panel.add(passwordLabel);
 
         JPasswordField passwordField = new JPasswordField(20);
-        passwordField.setBounds(180, 90, 150, 20);
+        passwordField.setBounds(180, 110, 150, 20);
         panel.add(passwordField);
 
         JButton loginButton = new JButton("Login");
-        loginButton.setBounds(180, 120, 100, 30);
+        loginButton.setBounds(200, 140, 110, 30);
         // Cores de fundo e texto do botão
         loginButton.setBackground(new Color(0, 128, 255)); // Azul
         loginButton.setForeground(Color.WHITE);
         panel.add(loginButton);
+        
+        JButton exitButton = new JButton("Sair");
+        exitButton.setBounds(280, 300, 100, 30);
+        exitButton.setBackground(new Color(0,0,0));
+        exitButton.setForeground(Color.WHITE);
+        panel.add(exitButton);
+        
+        JButton registerButton = new JButton("Cadastre-se");
+        registerButton.setBounds(200, 180, 110, 20);
+        registerButton.setForeground(Color.GRAY);
+        panel.add(registerButton);
+        
+        JButton govButton = new JButton("Sou funcionário do governo");
+        govButton.setBounds(10, 300, 190, 30);
+        govButton.setBackground(new Color(0,0,0));
+        govButton.setForeground(Color.WHITE);
+        panel.add(govButton);
+        
+        JButton politicoButton = new JButton("Governamental");
+        politicoButton.setBounds(195, 205, 120, 20);
+        politicoButton.setBackground(new Color(255,0,0));
+        politicoButton.setForeground(Color.WHITE);
+        panel.add(politicoButton);
 
         loginButton.addActionListener(new ActionListener() {
             @Override
@@ -63,8 +99,38 @@ public class TelaDeLogin extends JFrame{
                 passwordField.setText("");
             }
         });
-
+        
+        exitButton.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                System.exit(0);
+            }
+            });
+        
+        registerButton.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                frame.dispose();
+                RegistroJanela cadastro = new RegistroJanela();        
+        }
+        });
+        
+        govButton.addActionListener(new ActionListener(){
+            @Override 
+            public void actionPerformed(ActionEvent e){
+               frame.dispose();
+               FuncGoverno funcionario = new FuncGoverno();
+           }
+        });
+        
+        politicoButton.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                frame.dispose();
+                RegistroPolitico politico = new RegistroPolitico();
+            }
+        });
+       
         frame.setVisible(true);
     }
 }
-
