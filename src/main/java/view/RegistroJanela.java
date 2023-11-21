@@ -15,8 +15,7 @@ import java.awt.event.ActionListener;
  */
 public class RegistroJanela extends JFrame{ 
    public RegistroJanela(){
-        
-        
+          
         super("Janela de Cadastro");
         setSize(400, 400);
         
@@ -75,12 +74,27 @@ public class RegistroJanela extends JFrame{
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // Fecha apenas esta janela ao clicar em fechar
         setLocationRelativeTo(null); // Centraliza a janela na tela
         setVisible(true);
+        
+        JButton cancelButton = new JButton("Cancelar");
+        cancelButton.setBounds(10, 300, 100, 30);
+        cancelButton.setBackground(new Color(0,0,0));
+        cancelButton.setForeground(Color.WHITE);
+        panel.add(cancelButton);
     
         JButton finallyButton = new JButton("Finalizar");
         finallyButton.setBounds(280, 300, 100, 30);
         finallyButton.setBackground(new Color(0,0,0));
         finallyButton.setForeground(Color.WHITE);
         panel.add(finallyButton);
+        
+        cancelButton.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                dispose();
+                new TelaDeLogin();
+                
+                }
+        });
         
         finallyButton.addActionListener(new ActionListener(){
         

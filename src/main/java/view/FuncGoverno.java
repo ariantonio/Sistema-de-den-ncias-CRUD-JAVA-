@@ -16,7 +16,6 @@ public class FuncGoverno extends JFrame{
         JPanel panel = new JPanel();
         add(panel);
         panel.setLayout(null);
-        
         panel.setBackground(new Color(240,240,240));
         
         JLabel titleLabel = new JLabel("Cadastre-se!");
@@ -90,6 +89,21 @@ public class FuncGoverno extends JFrame{
         finallyButton.setBackground(new Color(0,0,0));
         finallyButton.setForeground(Color.WHITE);
         panel.add(finallyButton);
+        
+        JButton cancelButton = new JButton("Cancelar");
+        cancelButton.setBounds(10, 300, 100, 30);
+        cancelButton.setBackground(new Color(0,0,0));
+        cancelButton.setForeground(Color.WHITE);
+        panel.add(cancelButton);
+        
+        cancelButton.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                dispose();
+                new TelaDeLogin();
+                
+                }
+        });
         
         finallyButton.addActionListener(new ActionListener(){
         
