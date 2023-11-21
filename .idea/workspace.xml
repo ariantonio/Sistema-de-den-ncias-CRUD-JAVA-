@@ -5,18 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cac9a311-7b5b-446e-8684-7941eb956bef" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/AssociacaoEntidadePolitica.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/InteracaoUsuarioOrgao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Denuncia.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/FuncionarioGoverno.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Politico.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/Mapainterativo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/driver/mysql-connector-j-8.2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/Conexao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/DenunciaDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/FuncionarioGovernoDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/PoliticoDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/UsuarioDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/AutenticacaoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/AutenticacaoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/TelaDeLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/TelaDeLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Denuncia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Denuncia.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,19 +41,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/vitor/Desktop/Unifacs/8 - Semestre/Progamação de soluçoes computacionais/A3/src/main/java/view&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "create.test.in.the.same.root": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/vitor/Desktop/Unifacs/8 - Semestre/Progamação de soluçoes computacionais/CRUD/src/driver",
+    "settings.editor.selected.configurable": "Errors"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\vitor\Desktop\Unifacs\8 - Semestre\Progamação de soluçoes computacionais\CRUD\src\driver" />
+      <recent name="C:\Users\vitor\Desktop\Unifacs\8 - Semestre\Progamação de soluçoes computacionais\CRUD\src\main\java\DAO" />
       <recent name="C:\Users\vitor\Desktop\Unifacs\8 - Semestre\Progamação de soluçoes computacionais\A3\src\main\java\view" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\vitor\Desktop\Unifacs\8 - Semestre\Progamação de soluçoes computacionais\CRUD\src\driver" />
     </key>
   </component>
   <component name="RunManager" selected="Application.TelaDeLogin">
@@ -132,5 +134,16 @@
       <updated>1699276309980</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
