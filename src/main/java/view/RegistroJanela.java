@@ -5,7 +5,9 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Arrays;
+import java.util.HashSet;
 import javax.swing.table.DefaultTableModel;
+import model.Usuario;
 
 public class RegistroJanela extends JFrame{ 
     
@@ -102,44 +104,61 @@ public class RegistroJanela extends JFrame{
          @Override
             public void actionPerformed(ActionEvent e){
                // Obter os dados dos campos de texto
-            String nome = nameField.getText();
+            String nome_U = nameField.getText();
             String idadeStr = ageField.getText();
-            int idade = 0;
-            String email = emailField.getText();
-            char[] senha = passwordField.getPassword();
-            char[] confirmacaoSenha = secondPasswordField.getPassword();
+            int idadeTest = 0;
+            String email_U = emailField.getText();
+            char[] senha_U = passwordField.getPassword();
+            char[] confirmacaoSenha_U = secondPasswordField.getPassword();
             
+            //variáveis para usar nos sets
+            String nomeUser = "";
+            int idadeUser = 0;
+            String emailUser = "";
+           
             try {
                 
             // Validar se os campos não estão vazios 
-            if (nome.isEmpty() || idadeStr.isEmpty() || email.isEmpty() || senha.length == 0 || confirmacaoSenha.length == 0) {
+            if (nome_U.isEmpty() || idadeStr.isEmpty() || email_U.isEmpty() || senha_U.length == 0 || confirmacaoSenha_U.length == 0) {
                 JOptionPane.showMessageDialog(null, "Preencha todos os campos.", "Erro", JOptionPane.ERROR_MESSAGE);
                 return;
             }    
-            if (nameField.getText().length() < 2) {
+            if (nome_U.length() < 2) {
                 throw new Mensagens("O nome deve conter ao menos 2 caracteres.");
             } else {
-                nome = nameField.getText();
+               nomeUser = nameField.getText();
             }
 
-            idade = Integer.parseInt(idadeStr);
-            if (idade <18){
+            idadeTest = Integer.parseInt(idadeStr);
+            if (idadeTest <18){
                 throw new Mensagens("É necessário ter no mínimo 18 anos para se cadastrar.");
+            }else{
+               idadeUser = idadeTest; 
             }
-
-            if (emailField.getText().length() < 2) {
-                throw new Mensagens("Email deve conter ao menos 2 caracteres.");
+            
+            if (email_U.length() < 5) {
+                throw new Mensagens("Email deve conter ao menos 5 caracteres.");
             } else {
-                email = emailField.getText();
+               emailUser = emailField.getText();
             }
             // Validar se as senhas coincidem
-            if (!Arrays.equals(senha,confirmacaoSenha)) {
+            if (!Arrays.equals(senha_U,confirmacaoSenha_U)) {
                 JOptionPane.showMessageDialog(null, "As senhas não coincidem.", "Erro", JOptionPane.ERROR_MESSAGE);
                 return;
             }else{
+                
+                //variaveis para usar no DAO
+                Usuario usuario = new Usuario();
+                usuario.setNome(nomeUser);
+                usuario.setSenha(new String(senha_U));
+                usuario.setEmail(emailUser);
+                usuario.setIdade(idadeUser);
+                
                 int resposta = JOptionPane.showConfirmDialog(null, "Confirma o cadastro?", "Confirmação", JOptionPane.YES_NO_OPTION);
                     if (resposta == JOptionPane.YES_OPTION) {
+             
                         dispose();
+                        
                     }
             }
              } catch (Mensagens erro) {

@@ -6,6 +6,9 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+import model.FuncionarioGoverno;
 
 
 public class FuncGoverno extends JFrame{
@@ -111,48 +114,69 @@ public class FuncGoverno extends JFrame{
          @Override
             public void actionPerformed(ActionEvent e){
                // Obter os dados dos campos de texto
-            String nome = nameField.getText();
-            String email = emailField.getText();
-            String orgao = orgaoField.getText();
-            String identif = idField.getText();
-            String cargo = cargoField.getText();
-            char[] senha = passwordField.getPassword();
-            char[] confirmacaoSenha = secondPasswordField.getPassword();
+            String nomeF = nameField.getText();
+            String emailF = emailField.getText();
+            String orgaoF = orgaoField.getText();
+            String identifF = idField.getText();
+            String cargoF = cargoField.getText();
+            char[] senhaF = passwordField.getPassword();
+            char[] confirmacaoSenhaF = secondPasswordField.getPassword();
             
+            // variáveis para usar nos sets
+            String nomeFunc = "";
+            String emailFunc = "";
+            String orgaoFunc = "";
+            String identifFunc = "";
+            String cargoFunc = "";
             try{
             // Validar se os campos não estão vazios 
-            if (nome.isEmpty() || email.isEmpty() || orgao.isEmpty() || cargo.isEmpty() || senha.length == 0 || confirmacaoSenha.length == 0) {
+            if (nomeF.isEmpty() || emailF.isEmpty() || orgaoF.isEmpty() || identifF.isEmpty() || cargoF.isEmpty() || senhaF.length == 0 || confirmacaoSenhaF.length == 0) {
              JOptionPane.showMessageDialog(null, "Preencha todos os campos.", "Erro", JOptionPane.ERROR_MESSAGE);
                 return;
             }
 
-            if (nameField.getText().length() < 2) {
+            if (nomeF.length() < 2) {
                 throw new Mensagens("O nome deve conter ao menos 2 caracteres.");
             } else {
-                nome = nameField.getText();
+              nomeFunc = nameField.getText();
             }
-            if (emailField.getText().length() < 5) {
+            if (emailF.length() < 5) {
                 throw new Mensagens("O email deve conter ao menos 5 caracteres.");
             } else {
-                email = emailField.getText();
+              emailFunc = emailField.getText();
             }
-            if(orgaoField.getText().length()<2){
+            if(orgaoF.length()<2){
                 throw new Mensagens("É necessário ter no mínimo ter 2 caracteres no orgao.");
             }else{
-                orgao = orgaoField.getText();
+              orgaoFunc = orgaoField.getText();
+                
+            if(identifF.length()<2){
+                throw new Mensagens("É necessário ter no mínimo ter 2 caracteres na identificação.");
+            }else{
+              identifFunc = idField.getText();
+            }    
             }
-            if (cargoField.getText().length() < 2) {
+            if (cargoF.length() < 2) {
                 throw new Mensagens("Deve conter ao menos 2 caracteres no cargo.");
             } else {
-                cargo = cargoField.getText();
+               cargoFunc = cargoField.getText();
             }
             // Validar se as senhas coincidem
-            if (!Arrays.equals(senha,confirmacaoSenha)) {
+            if (!Arrays.equals(senhaF,confirmacaoSenhaF)) {
                 JOptionPane.showMessageDialog(null, "As senhas não coincidem.", "Erro", JOptionPane.ERROR_MESSAGE);
             }else{
-                int resposta = JOptionPane.showConfirmDialog(null, "Confirma o cadastro?", "Confirmação", JOptionPane.YES_NO_OPTION);
-                String convertedString = new String(senha); 
-                String senhaStr = convertedString;
+                
+                //variaveis para usar no DAO
+                FuncionarioGoverno funcGov = new FuncionarioGoverno();
+                funcGov.setNome(nomeFunc);
+                funcGov.setEmail(emailFunc);
+                funcGov.setOrgao(orgaoFunc);
+                funcGov.setIdentificacao(identifFunc);
+                funcGov.setCargo(cargoFunc);
+                funcGov.setSenha(new String(senhaF));
+                
+                int resposta = JOptionPane.showConfirmDialog(null, "Confirma o cadastro?", "Confirmação", JOptionPane.YES_NO_OPTION); 
+                
                     if (resposta == JOptionPane.YES_OPTION) {
                         dispose();
                     }

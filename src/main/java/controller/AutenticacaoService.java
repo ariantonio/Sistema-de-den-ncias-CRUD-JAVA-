@@ -8,7 +8,7 @@ public class AutenticacaoService {
 
     public AutenticacaoService() {
         usuarios = new ArrayList<>();
-        usuarios.add(new Usuario("usuario", "senha"));
+        usuarios.add(new Usuario("usuario", "senha", 0, ""));
         // Adicione outros usuários, se necessário
     }
 
