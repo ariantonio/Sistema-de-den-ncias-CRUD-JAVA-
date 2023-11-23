@@ -82,6 +82,9 @@ public class TelaDeLogin extends JFrame{
             }
                 if (username.equals("usuario") && String.valueOf(password).equals("senha")) {
                     JOptionPane.showMessageDialog(frame, "Login bem-sucedido!");
+                    frame.setVisible(false);
+                    TelaPrincipalUsuario telausuario = new TelaPrincipalUsuario();
+                    telausuario.setVisible(true);        
                 } else {
                     JOptionPane.showMessageDialog(frame, "Nome de usuário ou senha incorretos.");
                 }
@@ -118,6 +121,5 @@ public class TelaDeLogin extends JFrame{
     }
      public static void main(String[] args){
 
-    TelaDeLogin login = new TelaDeLogin();
 }
 }
