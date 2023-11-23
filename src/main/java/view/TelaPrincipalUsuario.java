@@ -95,7 +95,7 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
 
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
         // TODO add your handling code here:
-
+        System.exit(0);
     }//GEN-LAST:event_exitButtonActionPerformed
 
     private void configButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_configButtonActionPerformed
@@ -108,7 +108,7 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
 
     private void cadDenunciaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadDenunciaButtonActionPerformed
         // TODO add your handling code here:
-        TelaCadastrarDenuncias telacad = new TelaCadastrarDenuncias();
+        TelaCadastrarDenuncias1 telacad = new TelaCadastrarDenuncias1();
         telacad.setVisible(true);
     }//GEN-LAST:event_cadDenunciaButtonActionPerformed
 
