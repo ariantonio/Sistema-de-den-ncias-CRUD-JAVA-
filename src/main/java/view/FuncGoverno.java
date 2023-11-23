@@ -5,6 +5,7 @@ import java.awt.Font;
 import javax.swing.*; 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
 
 
 public class FuncGoverno extends JFrame{
@@ -68,7 +69,7 @@ public class FuncGoverno extends JFrame{
         passwordLabel.setBounds(50, 210, 120, 60);
         panel.add(passwordLabel);
         
-        JTextField passwordField = new JTextField(20);
+        JPasswordField passwordField = new JPasswordField(20);
         passwordField.setBounds(180, 230, 150, 20);
         panel.add(passwordField);
         
@@ -76,7 +77,7 @@ public class FuncGoverno extends JFrame{
         secondPasswordLabel.setBounds(50, 240, 120, 60);
         panel.add(secondPasswordLabel);
         
-        JTextField secondPasswordField = new JTextField(20);
+        JPasswordField secondPasswordField = new JPasswordField(20);
         secondPasswordField.setBounds(180, 260, 150, 20);
         panel.add(secondPasswordField);
         
@@ -112,28 +113,55 @@ public class FuncGoverno extends JFrame{
                // Obter os dados dos campos de texto
             String nome = nameField.getText();
             String email = emailField.getText();
-            String senha = passwordField.getText();
-            String confirmacaoSenha = secondPasswordField.getText();
+            String orgao = orgaoField.getText();
+            String identif = idField.getText();
+            String cargo = cargoField.getText();
+            char[] senha = passwordField.getPassword();
+            char[] confirmacaoSenha = secondPasswordField.getPassword();
             
+            try{
             // Validar se os campos não estão vazios 
-            if (nome.isEmpty() || email.isEmpty() || senha.isEmpty() || confirmacaoSenha.isEmpty()) {
+            if (nome.isEmpty() || email.isEmpty() || orgao.isEmpty() || cargo.isEmpty() || senha.length == 0 || confirmacaoSenha.length == 0) {
              JOptionPane.showMessageDialog(null, "Preencha todos os campos.", "Erro", JOptionPane.ERROR_MESSAGE);
                 return;
             }
 
-            // Validar se as senhas coincidem
-            if (!senha.equals(confirmacaoSenha)) {
-            JOptionPane.showMessageDialog(null, "As senhas não coincidem.", "Erro", JOptionPane.ERROR_MESSAGE);
-            return;
+            if (nameField.getText().length() < 2) {
+                throw new Mensagens("O nome deve conter ao menos 2 caracteres.");
+            } else {
+                nome = nameField.getText();
             }
-            int resposta = JOptionPane.showConfirmDialog(null, "Confirma o cadastro?", "Confirmação", JOptionPane.YES_NO_OPTION);
-
-            
-            if (resposta == JOptionPane.YES_OPTION) {
-    
-            // Fechar a janela
-            dispose();
-                }
+            if (emailField.getText().length() < 5) {
+                throw new Mensagens("O email deve conter ao menos 5 caracteres.");
+            } else {
+                email = emailField.getText();
+            }
+            if(orgaoField.getText().length()<2){
+                throw new Mensagens("É necessário ter no mínimo ter 2 caracteres no orgao.");
+            }else{
+                orgao = orgaoField.getText();
+            }
+            if (cargoField.getText().length() < 2) {
+                throw new Mensagens("Deve conter ao menos 2 caracteres no cargo.");
+            } else {
+                cargo = cargoField.getText();
+            }
+            // Validar se as senhas coincidem
+            if (!Arrays.equals(senha,confirmacaoSenha)) {
+                JOptionPane.showMessageDialog(null, "As senhas não coincidem.", "Erro", JOptionPane.ERROR_MESSAGE);
+            }else{
+                int resposta = JOptionPane.showConfirmDialog(null, "Confirma o cadastro?", "Confirmação", JOptionPane.YES_NO_OPTION);
+                String convertedString = new String(senha); 
+                String senhaStr = convertedString;
+                    if (resposta == JOptionPane.YES_OPTION) {
+                        dispose();
+                    }
+            }
+             } catch (Mensagens erro) {
+            JOptionPane.showMessageDialog(null, erro.getMessage());
+             } catch (NumberFormatException erro2) {
+            JOptionPane.showMessageDialog(null, "Informe um número na idade.");
+             }
             }
     });
     

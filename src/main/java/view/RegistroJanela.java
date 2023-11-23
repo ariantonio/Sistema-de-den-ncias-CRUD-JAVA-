@@ -4,11 +4,19 @@ import java.awt.Font;
 import javax.swing.*; 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
+import javax.swing.table.DefaultTableModel;
 
 public class RegistroJanela extends JFrame{ 
-   public RegistroJanela(){
+    
+   private DefaultTableModel tableModel;
+   private JTable table;
+   
+   public RegistroJanela(DefaultTableModel model){
           
         super("Janela de Cadastro");
+        this.tableModel = model;
+        this.table = new JTable(tableModel);
         setSize(400, 400);
         
         JPanel panel = new JPanel();
@@ -31,7 +39,7 @@ public class RegistroJanela extends JFrame{
         nameField.setBounds(180, 80, 150, 20);
         panel.add(nameField);
         
-        JLabel ageLabel = new JLabel("Data de nascimento ");
+        JLabel ageLabel = new JLabel("Idade: ");
         ageLabel.setBounds(50, 90, 120, 60);
         panel.add(ageLabel);
         
@@ -39,7 +47,7 @@ public class RegistroJanela extends JFrame{
         ageField.setBounds(180, 110, 150, 20);
         panel.add(ageField);
         
-        JLabel emailLabel = new JLabel("Email:");
+        JLabel emailLabel = new JLabel("Email: ");
         emailLabel.setBounds(50, 120, 120, 60);
         panel.add(emailLabel);
                 
@@ -51,7 +59,7 @@ public class RegistroJanela extends JFrame{
         passwordLabel.setBounds(50, 150, 120, 60);
         panel.add(passwordLabel);
         
-        JTextField passwordField = new JTextField(20);
+        JPasswordField passwordField = new JPasswordField(20);
         passwordField.setBounds(180, 170, 150, 20);
         panel.add(passwordField);
         
@@ -59,7 +67,7 @@ public class RegistroJanela extends JFrame{
         secondPasswordLabel.setBounds(50, 180, 120, 60);
         panel.add(secondPasswordLabel);
         
-        JTextField secondPasswordField = new JTextField(20);
+        JPasswordField secondPasswordField = new JPasswordField(20);
         secondPasswordField.setBounds(180, 200, 150, 20);
         panel.add(secondPasswordField);
         
@@ -88,37 +96,62 @@ public class RegistroJanela extends JFrame{
                 }
         });
         
+        
         finallyButton.addActionListener(new ActionListener(){
         
          @Override
             public void actionPerformed(ActionEvent e){
                // Obter os dados dos campos de texto
             String nome = nameField.getText();
+            String idadeStr = ageField.getText();
+            int idade = 0;
             String email = emailField.getText();
-            String senha = passwordField.getText();
-            String confirmacaoSenha = secondPasswordField.getText();
+            char[] senha = passwordField.getPassword();
+            char[] confirmacaoSenha = secondPasswordField.getPassword();
             
+            try {
+                
             // Validar se os campos não estão vazios 
-            if (nome.isEmpty() || email.isEmpty() || senha.isEmpty() || confirmacaoSenha.isEmpty()) {
-             JOptionPane.showMessageDialog(null, "Preencha todos os campos.", "Erro", JOptionPane.ERROR_MESSAGE);
+            if (nome.isEmpty() || idadeStr.isEmpty() || email.isEmpty() || senha.length == 0 || confirmacaoSenha.length == 0) {
+                JOptionPane.showMessageDialog(null, "Preencha todos os campos.", "Erro", JOptionPane.ERROR_MESSAGE);
                 return;
+            }    
+            if (nameField.getText().length() < 2) {
+                throw new Mensagens("O nome deve conter ao menos 2 caracteres.");
+            } else {
+                nome = nameField.getText();
             }
 
+            idade = Integer.parseInt(idadeStr);
+            if (idade <18){
+                throw new Mensagens("É necessário ter no mínimo 18 anos para se cadastrar.");
+            }
+
+            if (emailField.getText().length() < 2) {
+                throw new Mensagens("Email deve conter ao menos 2 caracteres.");
+            } else {
+                email = emailField.getText();
+            }
             // Validar se as senhas coincidem
-            if (!senha.equals(confirmacaoSenha)) {
-            JOptionPane.showMessageDialog(null, "As senhas não coincidem.", "Erro", JOptionPane.ERROR_MESSAGE);
-            return;
+            if (!Arrays.equals(senha,confirmacaoSenha)) {
+                JOptionPane.showMessageDialog(null, "As senhas não coincidem.", "Erro", JOptionPane.ERROR_MESSAGE);
+                return;
+            }else{
+                int resposta = JOptionPane.showConfirmDialog(null, "Confirma o cadastro?", "Confirmação", JOptionPane.YES_NO_OPTION);
+                    if (resposta == JOptionPane.YES_OPTION) {
+                        dispose();
+                    }
             }
-            int resposta = JOptionPane.showConfirmDialog(null, "Confirma o cadastro?", "Confirmação", JOptionPane.YES_NO_OPTION);
-   
+             } catch (Mensagens erro) {
+            JOptionPane.showMessageDialog(null, erro.getMessage());
+             } catch (NumberFormatException erro2) {
+            JOptionPane.showMessageDialog(null, "Informe um número na idade.");
+             }
             
-            if (resposta == JOptionPane.YES_OPTION) {
-
-            dispose();
-                }
             }
     });
-    
+        
+        
     }
 
      
