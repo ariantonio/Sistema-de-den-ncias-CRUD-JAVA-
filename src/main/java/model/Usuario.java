@@ -9,12 +9,13 @@ public class Usuario {
     public void cadastrar(){
 
     }
-
     public Usuario() {
     }
-    
-    
-    
+    public Usuario(String nome, String senha) {
+        this.nome = nome;
+        this.senha = senha;
+    }
+ 
     public Usuario(String nomeUsuario, String senha, int idade, String email) {
         this.nome = nomeUsuario;
         this.senha = senha;

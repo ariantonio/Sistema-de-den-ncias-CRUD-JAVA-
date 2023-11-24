@@ -46,7 +46,7 @@ public class RegistroJanela extends JFrame{
         nameField.setBounds(180, 80, 150, 20);
         panel.add(nameField);
         
-        JLabel dateLabel = new JLabel("Enter Date (dd-MM-yyyy): ");
+        JLabel dateLabel = new JLabel("Data de Nascimento: ");
         dateLabel.setBounds(50, 90, 120, 60);
         panel.add(dateLabel);
 
