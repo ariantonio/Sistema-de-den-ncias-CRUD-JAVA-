@@ -177,12 +177,6 @@ public class RegistroJanela extends JFrame{
             usuario.setSenha(new String(senha_U));
             usuario.setEmail(emailUser);
             usuario.setIdade(idadeUser);
-            
-            System.out.println(usuario.getNome());
-            System.out.println(usuario.getSenha());
-            System.out.println(usuario.getEmail());
-            System.out.println(usuario.getIdade());
-            
             int resposta = JOptionPane.showConfirmDialog(null, "Confirma o cadastro?", "Confirmação", JOptionPane.YES_NO_OPTION);
                 if (resposta == JOptionPane.YES_OPTION){
                     dispose();   
