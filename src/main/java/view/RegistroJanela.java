@@ -4,10 +4,16 @@ import java.awt.Font;
 import javax.swing.*; 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
 import java.util.Arrays;
-import java.util.HashSet;
 import javax.swing.table.DefaultTableModel;
 import model.Usuario;
+import javax.swing.text.MaskFormatter;
+import java.util.Date;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+import java.time.ZoneId;
+import java.text.SimpleDateFormat;
 
 public class RegistroJanela extends JFrame{ 
     
@@ -35,20 +41,25 @@ public class RegistroJanela extends JFrame{
         JLabel nameLabel = new JLabel("Nome:");
         nameLabel.setBounds(50, 60, 120, 60);
         panel.add(nameLabel);
-       
-                
+        
         JTextField nameField = new JTextField(20);
         nameField.setBounds(180, 80, 150, 20);
         panel.add(nameField);
         
-        JLabel ageLabel = new JLabel("Idade: ");
-        ageLabel.setBounds(50, 90, 120, 60);
-        panel.add(ageLabel);
-        
-        JTextField ageField = new JTextField(20);
-        ageField.setBounds(180, 110, 150, 20);
-        panel.add(ageField);
-        
+        JLabel dateLabel = new JLabel("Enter Date (dd-MM-yyyy): ");
+        dateLabel.setBounds(50, 90, 120, 60);
+        panel.add(dateLabel);
+
+        MaskFormatter mfdata = null;
+        try {
+            mfdata = new MaskFormatter("  ## / ## / ####");
+        } catch (ParseException e) {
+            e.printStackTrace(); 
+        }
+        JFormattedTextField dateField = new JFormattedTextField(mfdata);
+        dateField.setBounds(180, 110, 150, 20);
+        panel.add(dateField);
+
         JLabel emailLabel = new JLabel("Email: ");
         emailLabel.setBounds(50, 120, 120, 60);
         panel.add(emailLabel);
@@ -105,21 +116,19 @@ public class RegistroJanela extends JFrame{
             public void actionPerformed(ActionEvent e){
                // Obter os dados dos campos de texto
             String nome_U = nameField.getText();
-            String idadeStr = ageField.getText();
-            int idadeTest = 0;
+            Object value = dateField.getValue();
             String email_U = emailField.getText();
             char[] senha_U = passwordField.getPassword();
             char[] confirmacaoSenha_U = secondPasswordField.getPassword();
             
             //variáveis para usar nos sets
             String nomeUser = "";
-            int idadeUser = 0;
             String emailUser = "";
-           
+            int idadeUser = 0;
             try {
                 
             // Validar se os campos não estão vazios 
-            if (nome_U.isEmpty() || idadeStr.isEmpty() || email_U.isEmpty() || senha_U.length == 0 || confirmacaoSenha_U.length == 0) {
+            if (nome_U.isEmpty() || value == null || email_U.isEmpty() || senha_U.length == 0 || confirmacaoSenha_U.length == 0) {
                 JOptionPane.showMessageDialog(null, "Preencha todos os campos.", "Erro", JOptionPane.ERROR_MESSAGE);
                 return;
             }    
@@ -129,11 +138,27 @@ public class RegistroJanela extends JFrame{
                nomeUser = nameField.getText();
             }
 
-            idadeTest = Integer.parseInt(idadeStr);
-            if (idadeTest <18){
-                throw new Mensagens("É necessário ter no mínimo 18 anos para se cadastrar.");
+        // verificar se o valor do campo de data é uma String
+             if (value instanceof String string) {
+             // tentar converter a String para uma data
+                SimpleDateFormat dateFormat = new SimpleDateFormat("  dd / mm / yyyy");
+                try {
+                    Date dataEntrada = dateFormat.parse(string);
+                    LocalDate dataNascimento = dataEntrada.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+                    LocalDate hoje = LocalDate.now();
+                    long anos = ChronoUnit.YEARS.between(dataNascimento, hoje);
+                        if (anos < 18) {
+                        JOptionPane.showMessageDialog(null, "É necessário ter no mínimo 18 anos para se cadastrar.", "Erro", JOptionPane.ERROR_MESSAGE);
+                        return;
+                         }else{
+                            idadeUser = (int) anos;
+                        }
+                        
+                } catch (ParseException p) {
+                 throw new Mensagens("A data de nascimento é inválida.");
+                    }
             }else{
-               idadeUser = idadeTest; 
+                throw new Mensagens("A data de nascimento é inválida.");
             }
             
             if (email_U.length() < 5) {
@@ -145,33 +170,24 @@ public class RegistroJanela extends JFrame{
             if (!Arrays.equals(senha_U,confirmacaoSenha_U)) {
                 JOptionPane.showMessageDialog(null, "As senhas não coincidem.", "Erro", JOptionPane.ERROR_MESSAGE);
                 return;
-            }else{
-                
-                //variaveis para usar no DAO
-                Usuario usuario = new Usuario();
-                usuario.setNome(nomeUser);
-                usuario.setSenha(new String(senha_U));
-                usuario.setEmail(emailUser);
-                usuario.setIdade(idadeUser);
-                
-                int resposta = JOptionPane.showConfirmDialog(null, "Confirma o cadastro?", "Confirmação", JOptionPane.YES_NO_OPTION);
-                    if (resposta == JOptionPane.YES_OPTION) {
-             
-                        dispose();
-                        
-                    }
             }
+            //variaveis para usar no DAO
+            Usuario usuario = new Usuario();
+            usuario.setNome(nomeUser);
+            usuario.setSenha(new String(senha_U));
+            usuario.setEmail(emailUser);
+            usuario.setIdade(idadeUser);
+            int resposta = JOptionPane.showConfirmDialog(null, "Confirma o cadastro?", "Confirmação", JOptionPane.YES_NO_OPTION);
+                if (resposta == JOptionPane.YES_OPTION){
+                    dispose();   
+                }
              } catch (Mensagens erro) {
             JOptionPane.showMessageDialog(null, erro.getMessage());
              } catch (NumberFormatException erro2) {
             JOptionPane.showMessageDialog(null, "Informe um número na idade.");
-             }
             
+             }
             }
-    });
-        
-        
+    });    
     }
-
-     
 }

@@ -36,6 +36,7 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
         conDenunciaButton = new javax.swing.JMenuItem();
         profileButton = new javax.swing.JMenu();
         configButton = new javax.swing.JMenu();
+        exitButton = new javax.swing.JMenu();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -80,6 +81,14 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
         });
         jMenuBar1.add(configButton);
 
+        exitButton.setText("Sair");
+        exitButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                exitButtonMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(exitButton);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -116,6 +125,15 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
         TelaConsultarDenunciasU telacon = new TelaConsultarDenunciasU();
         telacon.setVisible(true);
     }//GEN-LAST:event_conDenunciaButtonActionPerformed
+
+    private void exitButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButtonMouseClicked
+        // TODO add your handling code here:
+        int option = JOptionPane.showConfirmDialog(this, "Deseja realmente sair?", "Confirmação", JOptionPane.YES_NO_OPTION);
+
+        if (option == JOptionPane.YES_OPTION) {
+            System.exit(0);
+        }
+    }//GEN-LAST:event_exitButtonMouseClicked
 
     /**
      * @param args the command line arguments
@@ -158,6 +176,7 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
     private javax.swing.JMenuItem conDenunciaButton;
     private javax.swing.JMenu configButton;
     private javax.swing.JMenu denunciasButton;
+    private javax.swing.JMenu exitButton;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
