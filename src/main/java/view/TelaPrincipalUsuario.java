@@ -35,6 +35,7 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
         cadDenunciaButton = new javax.swing.JMenuItem();
         conDenunciaButton = new javax.swing.JMenuItem();
         profileButton = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
         configButton = new javax.swing.JMenu();
         exitButton = new javax.swing.JMenu();
 
@@ -71,6 +72,11 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
                 profileButtonActionPerformed(evt);
             }
         });
+
+        jMenuItem3.setText("Desconectar");
+        jMenuItem3.setToolTipText("");
+        profileButton.add(jMenuItem3);
+
         jMenuBar1.add(profileButton);
 
         configButton.setText("Configurações");
@@ -180,6 +186,7 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenu profileButton;
     // End of variables declaration//GEN-END:variables
 }
