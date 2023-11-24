@@ -82,7 +82,7 @@ public class TelaDeLogin extends JFrame{
             }
                 if (username.equals("usuario") && String.valueOf(password).equals("senha")) {
                     JOptionPane.showMessageDialog(frame, "Login bem-sucedido!");
-                    frame.setVisible(false);
+                    frame.dispose();
                     TelaPrincipalUsuario telausuario = new TelaPrincipalUsuario();
                     telausuario.setVisible(true);        
                 } else {

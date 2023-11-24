@@ -13,14 +13,14 @@ import java.util.logging.Logger;
  *
  * @author User
  */
-public class TelaCadastrarDenuncias extends javax.swing.JFrame {
+public class TelaCadastrarDenuncias1 extends javax.swing.JFrame {
 
     /**
      * Creates new form CadastrarDenuncias
      */
 
        
-    public TelaCadastrarDenuncias() {       
+    public TelaCadastrarDenuncias1() {       
         initComponents();
     }
 
@@ -122,7 +122,9 @@ public class TelaCadastrarDenuncias extends javax.swing.JFrame {
 
     private void nextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextButtonActionPerformed
         // TODO add your handling code here:
-        
+        this.dispose();
+        TelaCadastrarDenuncias2 tela2 = new TelaCadastrarDenuncias2();
+        tela2.setVisible(true);
     }//GEN-LAST:event_nextButtonActionPerformed
 
     /**
@@ -142,21 +144,23 @@ public class TelaCadastrarDenuncias extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastrarDenuncias.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCadastrarDenuncias1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastrarDenuncias.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCadastrarDenuncias1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastrarDenuncias.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCadastrarDenuncias1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastrarDenuncias.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaCadastrarDenuncias1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaCadastrarDenuncias().setVisible(true);
+                new TelaCadastrarDenuncias1().setVisible(true);
             }
         });
     }
