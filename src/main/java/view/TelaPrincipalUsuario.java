@@ -4,6 +4,8 @@
  */
 package view;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author User
@@ -26,13 +28,18 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         jMenuBar1 = new javax.swing.JMenuBar();
         denunciasButton = new javax.swing.JMenu();
         cadDenunciaButton = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        conDenunciaButton = new javax.swing.JMenuItem();
         profileButton = new javax.swing.JMenu();
         configButton = new javax.swing.JMenu();
-        exitButton = new javax.swing.JMenu();
+
+        jMenuItem1.setText("jMenuItem1");
+
+        jMenuItem2.setText("jMenuItem2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Se liga cidadão!");
@@ -47,8 +54,13 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
         });
         denunciasButton.add(cadDenunciaButton);
 
-        jMenuItem2.setText("Consultar minhas denúncias");
-        denunciasButton.add(jMenuItem2);
+        conDenunciaButton.setText("Consultar minhas denúncias");
+        conDenunciaButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                conDenunciaButtonActionPerformed(evt);
+            }
+        });
+        denunciasButton.add(conDenunciaButton);
 
         jMenuBar1.add(denunciasButton);
 
@@ -68,14 +80,6 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
         });
         jMenuBar1.add(configButton);
 
-        exitButton.setText("Sair");
-        exitButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exitButtonActionPerformed(evt);
-            }
-        });
-        jMenuBar1.add(exitButton);
-
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -93,11 +97,6 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
-        // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_exitButtonActionPerformed
-
     private void configButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_configButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_configButtonActionPerformed
@@ -111,6 +110,12 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
         TelaCadastrarDenuncias1 telacad = new TelaCadastrarDenuncias1();
         telacad.setVisible(true);
     }//GEN-LAST:event_cadDenunciaButtonActionPerformed
+
+    private void conDenunciaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_conDenunciaButtonActionPerformed
+        // TODO add your handling code here:
+        TelaConsultarDenunciasU telacon = new TelaConsultarDenunciasU();
+        telacon.setVisible(true);
+    }//GEN-LAST:event_conDenunciaButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -150,10 +155,11 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem cadDenunciaButton;
+    private javax.swing.JMenuItem conDenunciaButton;
     private javax.swing.JMenu configButton;
     private javax.swing.JMenu denunciasButton;
-    private javax.swing.JMenu exitButton;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenu profileButton;
     // End of variables declaration//GEN-END:variables
