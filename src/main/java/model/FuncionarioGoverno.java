@@ -1,42 +1,39 @@
 package model;
 
-public class FuncionarioGoverno {
-    private String nome;
-    private String email;
+public class FuncionarioGoverno extends Usuario {
     private String orgao;
     private String identificacao;
     private String cargo;
-    private String senha;
-    
+
+
+    public void excluir_denuncia(){
+
+    }
     
      public FuncionarioGoverno() {
     }
 
 
-    public FuncionarioGoverno(String nome, String email, String orgao, String identificacao, String cargo, String senha) {
-        this.nome = nome;
-        this.nome = email;
+    public FuncionarioGoverno(String orgao, String identificacao, String cargo) {
         this.orgao = orgao;
         this.identificacao = identificacao;
         this.cargo = cargo;
-        this.senha = senha;
     }
 
-    public String getEmail() {
-        return email;
+    public FuncionarioGoverno(String nome, String senha, String email, String orgao, String identificacao, String cargo) {
+        super(nome, senha, email);
+        this.orgao = orgao;
+        this.identificacao = identificacao;
+        this.cargo = cargo;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public FuncionarioGoverno(String nomeUsuario, String senha, int idade, String email, String orgao, String identificacao, String cargo) {
+        super(nomeUsuario, senha, idade, email);
+        this.orgao = orgao;
+        this.identificacao = identificacao;
+        this.cargo = cargo;
     }
 
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
 
     public String getOrgao() {
         return orgao;
@@ -62,18 +59,9 @@ public class FuncionarioGoverno {
         this.cargo = cargo;
     }
 
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
 
     
     
     
-    public void cadastro(){
 
-    }
 }

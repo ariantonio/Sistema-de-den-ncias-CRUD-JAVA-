@@ -1,25 +1,33 @@
 package DAO;
 
+import model.Usuario;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
 public class UsuarioDAO {
-    private String nome;
-    private String senha;
-    private String dataDeNascimento;
-    private String email;
+    private Connection connection;
 
-    public void cadastrar(){
-
+    public boolean inserir(){
+        return false;
+    }
+    public boolean alterar() {
+        return false;
     }
 
-    public UsuarioDAO(String nomeUsuario, String senha) {
-        this.nome = nomeUsuario;
-        this.senha = senha;
+    public boolean remover(){
+        return false;
     }
 
-    public String getNome() {
-        return nome;
+    public Connection getConnection() {
+        return connection;
     }
 
-    public String getSenha() {
-        return senha;
+    public void setConnection(Connection connection) {
+        this.connection = connection;
     }
 }
