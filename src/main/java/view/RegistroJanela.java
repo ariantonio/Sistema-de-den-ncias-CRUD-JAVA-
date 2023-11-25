@@ -6,7 +6,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
 import java.util.Arrays;
-import javax.swing.table.DefaultTableModel;
 import model.Usuario;
 import javax.swing.text.MaskFormatter;
 import java.util.Date;
@@ -16,15 +15,9 @@ import java.time.ZoneId;
 import java.text.SimpleDateFormat;
 
 public class RegistroJanela extends JFrame{ 
-    
-   private DefaultTableModel tableModel;
-   private JTable table;
-   
-   public RegistroJanela(DefaultTableModel model){
+   public RegistroJanela(){
           
         super("Janela de Cadastro");
-        this.tableModel = model;
-        this.table = new JTable(tableModel);
         setSize(400, 400);
         
         JPanel panel = new JPanel();
