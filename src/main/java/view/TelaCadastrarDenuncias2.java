@@ -7,6 +7,8 @@ package view;
 import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import model.Denuncia;
 
 
 /**
@@ -18,10 +20,11 @@ public class TelaCadastrarDenuncias2 extends javax.swing.JFrame {
     /**
      * Creates new form CadastrarDenuncias
      */
-
+    private Denuncia denuncia2;
        
     public TelaCadastrarDenuncias2() {       
         initComponents();
+        this.denuncia2 = new Denuncia();
     }
 
     /**
@@ -35,7 +38,7 @@ public class TelaCadastrarDenuncias2 extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        textoDesc = new javax.swing.JTextArea();
         finishButton = new javax.swing.JButton();
         backButton = new javax.swing.JButton();
 
@@ -45,10 +48,10 @@ public class TelaCadastrarDenuncias2 extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setText("Descrição do problema:");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setLineWrap(true);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        textoDesc.setColumns(20);
+        textoDesc.setLineWrap(true);
+        textoDesc.setRows(5);
+        jScrollPane1.setViewportView(textoDesc);
 
         finishButton.setText("Finalizar");
         finishButton.addActionListener(new java.awt.event.ActionListener() {
@@ -57,7 +60,7 @@ public class TelaCadastrarDenuncias2 extends javax.swing.JFrame {
             }
         });
 
-        backButton.setText("Cancelar");
+        backButton.setText("Voltar");
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backButtonActionPerformed(evt);
@@ -100,13 +103,35 @@ public class TelaCadastrarDenuncias2 extends javax.swing.JFrame {
 
     private void finishButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_finishButtonActionPerformed
         // TODO add your handling code here:
-        this.dispose();
+        String desc = "";
+
         
+        try{
+            if (this.textoDesc.getText().length() < 20){
+                throw new Mensagens("Preencha a descrição do problema.");
+
+            } else {
+                desc = this.textoDesc.getText();
+            }
+
+            if(this.denuncia2.cadastro2(desc)){
+                JOptionPane.showMessageDialog(rootPane, "Sua denúncia foi cadastrada!");
+                this.dispose();
+                
+            }        
+                
+        } catch (Mensagens erro){
+            JOptionPane.showMessageDialog(null, erro.getMessage());
+        }
+        
+
     }//GEN-LAST:event_finishButtonActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         // TODO add your handling code here:
         this.dispose();
+        TelaCadastrarDenuncias1 tela1 = new TelaCadastrarDenuncias1();
+        tela1.setVisible(true);
     }//GEN-LAST:event_backButtonActionPerformed
 
     /**
@@ -156,6 +181,6 @@ public class TelaCadastrarDenuncias2 extends javax.swing.JFrame {
     private javax.swing.JButton finishButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea textoDesc;
     // End of variables declaration//GEN-END:variables
 }

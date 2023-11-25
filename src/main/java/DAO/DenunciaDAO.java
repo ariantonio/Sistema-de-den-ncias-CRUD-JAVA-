@@ -35,8 +35,10 @@ public class DenunciaDAO {
                 denuncia.setFoto(fotos);
                 denuncia.setTipoDeProblema(resultSet.getString("tipoDeProblema"));
                 denuncia.setDescricao(resultSet.getString("descricao"));
-                denuncia.setLocalizacao(resultSet.getString("localizacao"));
-                denuncia.setStatus(resultSet.getString("status"));
+                denuncia.setBairro(resultSet.getString("bairro"));
+ //               denuncia.setRua(resultSet.getString("rua"));
+ //               denuncia.setComp(resultSet.getString("complemento"));
+ //               denuncia.setStatus(resultSet.getString("status"));
                 denunciasDb.add(denuncia);
             }
         } catch (SQLException e) {

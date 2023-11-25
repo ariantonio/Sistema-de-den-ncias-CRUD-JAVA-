@@ -4,9 +4,11 @@
  */
 package view;
 
+import model.Denuncia;
 import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -19,9 +21,12 @@ public class TelaCadastrarDenuncias1 extends javax.swing.JFrame {
      * Creates new form CadastrarDenuncias
      */
 
-       
+    private Denuncia denuncia1;
+    
+    
     public TelaCadastrarDenuncias1() {       
         initComponents();
+        this.denuncia1 = new Denuncia();
     }
 
     /**
@@ -37,10 +42,10 @@ public class TelaCadastrarDenuncias1 extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         textoBairro = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        textoRua = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        textoComp = new javax.swing.JTextArea();
         nextButton = new javax.swing.JButton();
         exitButton = new javax.swing.JButton();
 
@@ -56,10 +61,10 @@ public class TelaCadastrarDenuncias1 extends javax.swing.JFrame {
 
         jLabel3.setText("Complemento/Ponto de referência:");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setLineWrap(true);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        textoComp.setColumns(20);
+        textoComp.setLineWrap(true);
+        textoComp.setRows(5);
+        jScrollPane1.setViewportView(textoComp);
 
         nextButton.setText("Próximo");
         nextButton.addActionListener(new java.awt.event.ActionListener() {
@@ -69,6 +74,11 @@ public class TelaCadastrarDenuncias1 extends javax.swing.JFrame {
         });
 
         exitButton.setText("Cancelar");
+        exitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -86,7 +96,7 @@ public class TelaCadastrarDenuncias1 extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(textoBairro, javax.swing.GroupLayout.DEFAULT_SIZE, 414, Short.MAX_VALUE)
                             .addComponent(jLabel1)
-                            .addComponent(jTextField1)
+                            .addComponent(textoRua)
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -104,7 +114,7 @@ public class TelaCadastrarDenuncias1 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(textoRua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -122,10 +132,50 @@ public class TelaCadastrarDenuncias1 extends javax.swing.JFrame {
 
     private void nextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextButtonActionPerformed
         // TODO add your handling code here:
-        this.dispose();
-        TelaCadastrarDenuncias2 tela2 = new TelaCadastrarDenuncias2();
-        tela2.setVisible(true);
+        String bairro = "";
+        String rua = "";
+        String comp = "";
+        
+        try{
+            if (this.textoBairro.getText().length() < 2){
+                throw new Mensagens("Insira o bairro.");
+
+            } else {
+                bairro = this.textoBairro.getText();
+            }
+            
+            if (this.textoRua.getText().length() < 2){
+                throw new Mensagens("Insira a rua.");
+
+            } else {
+                rua = this.textoRua.getText();
+            }
+           
+                comp = this.textoComp.getText();
+            
+            if(this.denuncia1.cadastro1(bairro,rua,comp)){
+                
+                this.dispose();
+                TelaCadastrarDenuncias2 tela2 = new TelaCadastrarDenuncias2();
+                tela2.setVisible(true);
+                
+            }        
+                
+        } catch (Mensagens erro){
+            JOptionPane.showMessageDialog(null, erro.getMessage());
+        }
+        
+
     }//GEN-LAST:event_nextButtonActionPerformed
+
+    private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
+        // TODO add your handling code here:
+        
+        this.textoBairro.setText("");
+        this.textoRua.setText("");
+        this.textoComp.setText("");        
+        this.dispose();
+    }//GEN-LAST:event_exitButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -172,9 +222,9 @@ public class TelaCadastrarDenuncias1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton nextButton;
     private javax.swing.JTextField textoBairro;
+    private javax.swing.JTextArea textoComp;
+    private javax.swing.JTextField textoRua;
     // End of variables declaration//GEN-END:variables
 }
