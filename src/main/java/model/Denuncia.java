@@ -25,8 +25,8 @@ public class Denuncia {
     
     }
      public ArrayList getLista(){
-//        return DenunciaDAO.denunciasDb;
-        return null;
+     // DenunciaDAO.denunciasDb;
+     return null;
     }
      
     public boolean cadastro1( String bairro,String rua, String comp){

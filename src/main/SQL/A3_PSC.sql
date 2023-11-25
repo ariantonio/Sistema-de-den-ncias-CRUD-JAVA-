@@ -2,8 +2,8 @@ CREATE DATABASE A3_PSC;
 
 use A3_PSC;
 
-create table Tbl_Usuario(
-id_Usuario int auto_increment not null primary key,
+create table Tbl_Cidadao(
+id_Cidadao int auto_increment not null primary key,
 nome varchar(100) not null,
 dt_nascimento date not null,
 email varchar(100) not null,
@@ -11,7 +11,7 @@ senha varchar(8) not null
 );
 
 create table Tbl_Fun_GOV(
-id_Usuario int auto_increment not null primary key,
+id_Cidadao int auto_increment not null primary key,
 nome varchar(100) not null,
 orgao varchar(20) not null,
 cargo varchar(40) not null,
@@ -21,7 +21,7 @@ senha varchar(8) not null
 );
 
 create table Tbl_Politico(
-id_Usuario int auto_increment not null primary key,
+id_Cidadao int auto_increment not null primary key,
 nome varchar(100) not null,
 filiacao varchar(10) not null,
 cargo varchar(40) not null,
@@ -38,20 +38,20 @@ localizacao varchar(250) not null,
 imagem_anexada longblob NOT NULL
 );
 #------------------------------------
-Select * from Tbl_Usuario;
+Select * from Tbl_Cidadao;
 
-insert into Tbl_Usuario (nome, dt_nascimento, email, senha) values ();
+insert into Tbl_Cidadao (nome, dt_nascimento, email, senha) values ();
 #-------------------------------------
 ALTER TABLE Tbl_Fun_GOV
-ADD CONSTRAINT fk_usuario_fun_gov
-FOREIGN KEY (id_Usuario) REFERENCES Tbl_Usuario(id_Usuario);
+ADD CONSTRAINT fk_Cidadao_fun_gov
+FOREIGN KEY (id_Cidadao) REFERENCES Tbl_Cidadao(id_Cidadao);
 
 ALTER TABLE Tbl_Politico
-ADD CONSTRAINT fk_usuario_politico
-FOREIGN KEY (id_Usuario) REFERENCES Tbl_Usuario(id_Usuario);
+ADD CONSTRAINT fk_Cidadao_politico
+FOREIGN KEY (id_Cidadao) REFERENCES Tbl_Cidadao(id_Cidadao);
 
-ALTER TABLE Tbl_Usuario
-ADD CONSTRAINT ck_tamanho_senha_usuario
+ALTER TABLE Tbl_Cidadao
+ADD CONSTRAINT ck_tamanho_senha_Cidadao
 CHECK (LENGTH(senha) = 8);
 
 ALTER TABLE Tbl_Fun_GOV

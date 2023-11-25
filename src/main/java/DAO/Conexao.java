@@ -5,9 +5,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Conexao {
-    private static final String url = "jdbc:mysql://localhost:3306/A3_PSC";
+    private static final String url = "jdbc:mysql://localhost:3306/a3_psc";
     private static final String username = "root";
-    private static final String password = "root";
+    private static final String password = "";
 
     private static Connection conn;
 
@@ -15,6 +15,7 @@ public class Conexao {
         try {
 
             if (conn == null) {
+                //Class.forName("src.driver");
                 conn = DriverManager.getConnection(url, username, password);
                 System.out.println("Conexão estabelecida com sucesso!");
                 return conn;

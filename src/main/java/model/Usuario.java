@@ -1,26 +1,31 @@
 package model;
 
 public class Usuario {
+    private int id;
     private String nome;
     private String senha;
-    private int idade;
+    private int idade; //não tem no diagrama (remover do codigo ou acrecentar ao diagrama)
     private String email;
-
-    public void cadastrar(){
-
-    }
 
     public Usuario() {
     }
-    
-    
-    
+
+    public Usuario(String senha, String email) {
+        this.senha = senha;
+        this.email = email;
+    }
+
+    public Usuario(String nome, String senha, String email) {
+        this.nome = nome;
+        this.senha = senha;
+        this.email = email;
+    }
+ 
     public Usuario(String nomeUsuario, String senha, int idade, String email) {
         this.nome = nomeUsuario;
         this.senha = senha;
         this.idade = idade;
         this.email = email;
-       
     }
 
     public int getIdade() {
@@ -55,5 +60,11 @@ public class Usuario {
         this.senha = senha;
     }
 
-   
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }

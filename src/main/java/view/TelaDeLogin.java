@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.geom.RoundRectangle2D;
-import javax.swing.table.DefaultTableModel;
+
 
 public class TelaDeLogin extends JFrame{
     
@@ -78,8 +78,8 @@ public class TelaDeLogin extends JFrame{
                 char[] password = passwordField.getPassword();
                 // Faça a validação aqui (substitua isso pela lógica real de autenticação)
                 if (username.isEmpty() || password.length == 0){
-                JOptionPane.showMessageDialog(rootPane, "Preencha todos os campos");
-            }
+                    JOptionPane.showMessageDialog(rootPane, "Preencha todos os campos");
+                }
                 if (username.equals("usuario") && String.valueOf(password).equals("senha")) {
                     JOptionPane.showMessageDialog(frame, "Login bem-sucedido!");
                     frame.dispose();
@@ -104,9 +104,8 @@ public class TelaDeLogin extends JFrame{
         registerButton.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
-               DefaultTableModel tableModel = new DefaultTableModel();
-               RegistroJanela cadastro = new RegistroJanela(tableModel);        
-        }
+               RegistroJanela cadastro = new RegistroJanela();        
+            }
         });
         
         govButton.addActionListener(new ActionListener(){

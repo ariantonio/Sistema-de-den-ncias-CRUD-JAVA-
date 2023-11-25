@@ -1,13 +1,32 @@
 package DAO;
 
-public class FuncionarioGovernoDAO {
-    private String nome;
-    private String orgao;
-    private String identificacao;
-    private String cargo;
-    private String senha;
+import model.Cidadao;
+import model.FuncionarioGoverno;
 
-    public void cadastro(){
+import java.util.List;
 
+public class FuncionarioGovernoDAO extends UsuarioDAO {
+
+    public FuncionarioGovernoDAO() {
+        super.setConnection(Conexao.getconection());
+    }
+
+    public List<FuncionarioGoverno> listar() {
+        return null;
+    }
+
+    @Override
+    public boolean inserir() {
+        return super.inserir();
+    }
+
+    @Override
+    public boolean alterar() {
+        return super.alterar();
+    }
+
+    @Override
+    public boolean remover(int id) {
+        return super.remover(id);
     }
 }

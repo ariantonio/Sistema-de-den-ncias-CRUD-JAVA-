@@ -11,7 +11,6 @@ public class DenunciaDAO {
 
     public DenunciaDAO() {
         this.connection=Conexao.getconection();
-
     }
     public List<Denuncia> listar(){
         String sql = "SELECT * FROM Tbl_Denuncia";
