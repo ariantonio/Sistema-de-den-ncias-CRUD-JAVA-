@@ -35,7 +35,8 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
         cadDenunciaButton = new javax.swing.JMenuItem();
         conDenunciaButton = new javax.swing.JMenuItem();
         profileButton = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        editProfileButton = new javax.swing.JMenuItem();
+        quitButton = new javax.swing.JMenuItem();
         configButton = new javax.swing.JMenu();
         exitButton = new javax.swing.JMenu();
 
@@ -73,9 +74,17 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
             }
         });
 
-        jMenuItem3.setText("Desconectar");
-        jMenuItem3.setToolTipText("");
-        profileButton.add(jMenuItem3);
+        editProfileButton.setText("Editar meu perfil");
+        editProfileButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editProfileButtonActionPerformed(evt);
+            }
+        });
+        profileButton.add(editProfileButton);
+
+        quitButton.setText("Desconectar");
+        quitButton.setToolTipText("");
+        profileButton.add(quitButton);
 
         jMenuBar1.add(profileButton);
 
@@ -141,6 +150,12 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_exitButtonMouseClicked
 
+    private void editProfileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editProfileButtonActionPerformed
+        // TODO add your handling code here:
+        TelaPerfilU telaperfil = new TelaPerfilU();
+        telaperfil.setVisible(true);
+    }//GEN-LAST:event_editProfileButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -182,11 +197,12 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
     private javax.swing.JMenuItem conDenunciaButton;
     private javax.swing.JMenu configButton;
     private javax.swing.JMenu denunciasButton;
+    private javax.swing.JMenuItem editProfileButton;
     private javax.swing.JMenu exitButton;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenu profileButton;
+    private javax.swing.JMenuItem quitButton;
     // End of variables declaration//GEN-END:variables
 }

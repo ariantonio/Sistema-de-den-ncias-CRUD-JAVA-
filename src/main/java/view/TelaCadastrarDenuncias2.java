@@ -107,8 +107,8 @@ public class TelaCadastrarDenuncias2 extends javax.swing.JFrame {
 
         
         try{
-            if (this.textoDesc.getText().length() < 20){
-                throw new Mensagens("Preencha a descrição do problema.");
+            if (this.textoDesc.getText().length() < 10){
+                throw new Mensagens("Preencha a descrição maior do problema.");
 
             } else {
                 desc = this.textoDesc.getText();

@@ -4,6 +4,8 @@
  */
 package view;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author User
@@ -11,7 +13,7 @@ package view;
 public class TelaPrincipalFunc extends javax.swing.JFrame {
 
     /**
-     * Creates new form TelaPrincipalFunc
+     * Creates new form TelaPrincipal
      */
     public TelaPrincipalFunc() {
         initComponents();
@@ -26,21 +28,108 @@ public class TelaPrincipalFunc extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        denunciasButton = new javax.swing.JMenu();
+        conDenunciaButton = new javax.swing.JMenuItem();
+        conUsuarioButton = new javax.swing.JMenuItem();
+        profileButton = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        configButton = new javax.swing.JMenu();
+        exitButton = new javax.swing.JMenu();
+
+        jMenuItem1.setText("jMenuItem1");
+
+        jMenuItem2.setText("jMenuItem2");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Se liga cidadão!");
+
+        denunciasButton.setText("Consultar");
+
+        conDenunciaButton.setText("Consultar denúncias");
+        conDenunciaButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                conDenunciaButtonActionPerformed(evt);
+            }
+        });
+        denunciasButton.add(conDenunciaButton);
+
+        conUsuarioButton.setText("Consultar usuários");
+        conUsuarioButton.setToolTipText("");
+        denunciasButton.add(conUsuarioButton);
+
+        jMenuBar1.add(denunciasButton);
+
+        profileButton.setText("Meu Perfil");
+        profileButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                profileButtonActionPerformed(evt);
+            }
+        });
+
+        jMenuItem3.setText("Desconectar");
+        jMenuItem3.setToolTipText("");
+        profileButton.add(jMenuItem3);
+
+        jMenuBar1.add(profileButton);
+
+        configButton.setText("Configurações");
+        configButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                configButtonActionPerformed(evt);
+            }
+        });
+        jMenuBar1.add(configButton);
+
+        exitButton.setText("Sair");
+        exitButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                exitButtonMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(exitButton);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 1068, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 616, Short.MAX_VALUE)
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void configButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_configButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_configButtonActionPerformed
+
+    private void profileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_profileButtonActionPerformed
+
+    private void conDenunciaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_conDenunciaButtonActionPerformed
+        // TODO add your handling code here:
+        TelaConsultarDenuncias telacon = new TelaConsultarDenuncias();
+        telacon.setVisible(true);
+    }//GEN-LAST:event_conDenunciaButtonActionPerformed
+
+    private void exitButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitButtonMouseClicked
+        // TODO add your handling code here:
+        int option = JOptionPane.showConfirmDialog(this, "Deseja realmente sair?", "Confirmação", JOptionPane.YES_NO_OPTION);
+
+        if (option == JOptionPane.YES_OPTION) {
+            System.exit(0);
+        }
+    }//GEN-LAST:event_exitButtonMouseClicked
 
     /**
      * @param args the command line arguments
@@ -68,6 +157,9 @@ public class TelaPrincipalFunc extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(TelaPrincipalFunc.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -78,5 +170,15 @@ public class TelaPrincipalFunc extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem conDenunciaButton;
+    private javax.swing.JMenuItem conUsuarioButton;
+    private javax.swing.JMenu configButton;
+    private javax.swing.JMenu denunciasButton;
+    private javax.swing.JMenu exitButton;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenu profileButton;
     // End of variables declaration//GEN-END:variables
 }
