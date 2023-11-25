@@ -128,7 +128,7 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
 
     private void conDenunciaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_conDenunciaButtonActionPerformed
         // TODO add your handling code here:
-        TelaConsultarDenunciasU telacon = new TelaConsultarDenunciasU();
+        TelaConsultarDenuncias telacon = new TelaConsultarDenuncias();
         telacon.setVisible(true);
     }//GEN-LAST:event_conDenunciaButtonActionPerformed
 
