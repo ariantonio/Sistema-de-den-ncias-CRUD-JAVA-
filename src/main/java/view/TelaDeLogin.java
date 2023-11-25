@@ -78,8 +78,8 @@ public class TelaDeLogin extends JFrame{
                 char[] password = passwordField.getPassword();
                 // Faça a validação aqui (substitua isso pela lógica real de autenticação)
                 if (username.isEmpty() || password.length == 0){
-                JOptionPane.showMessageDialog(rootPane, "Preencha todos os campos");
-            }
+                    JOptionPane.showMessageDialog(rootPane, "Preencha todos os campos");
+                }
                 if (username.equals("usuario") && String.valueOf(password).equals("senha")) {
                     JOptionPane.showMessageDialog(frame, "Login bem-sucedido!");
                     frame.dispose();
@@ -105,7 +105,7 @@ public class TelaDeLogin extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e){
                RegistroJanela cadastro = new RegistroJanela();        
-        }
+            }
         });
         
         govButton.addActionListener(new ActionListener(){

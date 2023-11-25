@@ -26,7 +26,7 @@ public class FuncionarioGovernoDAO extends UsuarioDAO {
     }
 
     @Override
-    public boolean remover() {
-        return super.remover();
+    public boolean remover(int id) {
+        return super.remover(id);
     }
 }

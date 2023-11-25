@@ -81,5 +81,6 @@ public class CidadaoDAO extends UsuarioDAO {
             throw new RuntimeException(e);
 
         }
+
     }
 }
