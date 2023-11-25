@@ -8,12 +8,12 @@ package view;
  *
  * @author User
  */
-public class TelaConsultarDenunciasF extends javax.swing.JFrame {
+public class TelaConsultarUsuariosF extends javax.swing.JFrame {
 
     /**
      * Creates new form TelaConsultarDenunciasU
      */
-    public TelaConsultarDenunciasF() {
+    public TelaConsultarUsuariosF() {
         initComponents();
     }
 
@@ -60,21 +60,23 @@ public class TelaConsultarDenunciasF extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaConsultarDenunciasF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaConsultarUsuariosF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaConsultarDenunciasF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaConsultarUsuariosF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaConsultarDenunciasF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaConsultarUsuariosF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaConsultarDenunciasF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaConsultarUsuariosF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaConsultarDenunciasF().setVisible(true);
+                new TelaConsultarUsuariosF().setVisible(true);
             }
         });
     }

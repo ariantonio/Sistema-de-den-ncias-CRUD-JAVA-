@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.geom.RoundRectangle2D;
-import javax.swing.table.DefaultTableModel;
+
 
 public class TelaDeLogin extends JFrame{
     
@@ -104,8 +104,7 @@ public class TelaDeLogin extends JFrame{
         registerButton.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
-               DefaultTableModel tableModel = new DefaultTableModel();
-               RegistroJanela cadastro = new RegistroJanela(tableModel);        
+               RegistroJanela cadastro = new RegistroJanela();        
         }
         });
         
