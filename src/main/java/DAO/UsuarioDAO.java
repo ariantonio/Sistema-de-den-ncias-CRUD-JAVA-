@@ -13,13 +13,19 @@ public class UsuarioDAO {
     private Connection connection;
 
     public boolean inserir(){
-        return false;
+        String sql = "";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            return true;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
     public boolean alterar() {
         return false;
     }
 
-    public boolean remover(){
+    public boolean remover(int id){
         return false;
     }
 

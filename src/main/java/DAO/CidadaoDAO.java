@@ -2,6 +2,7 @@ package DAO;
 
 import model.Cidadao;
 import model.Denuncia;
+import org.jetbrains.annotations.NotNull;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -37,18 +38,48 @@ public class CidadaoDAO extends UsuarioDAO {
         return cidadaoDb;
     }
 
-    @Override
-    public boolean inserir() {
-        return super.inserir();
+    public boolean inserir(@NotNull Cidadao cidadao) {
+        String sql = "INSERT INTO Tbl_Cidadao(nome, dt_nascimento, email, senha) VALUES(?, ?, ?, ?)";
+        try {
+            PreparedStatement stmt = super.getConnection().prepareStatement(sql);
+            stmt.setString(1, cidadao.getNome());
+            stmt.setString(2, cidadao.getData_nascimento());
+            stmt.setString(3, cidadao.getEmail());
+            stmt.setString(4, cidadao.getSenha());
+            stmt.execute();
+            return true;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public boolean alterar(@NotNull Cidadao cidadao) {
+        String sql = "UPDATE Tbl_Cidadao SET nome=?, dt_nascimento=?, email=?, senha=? WHERE id=?";
+        try {
+            PreparedStatement stmt = super.getConnection().prepareStatement(sql);
+            stmt.setString(1,cidadao.getNome());stmt.setString(2,cidadao.getData_nascimento());
+            stmt.setString(3,cidadao.getEmail());
+            stmt.setString(4,cidadao.getSenha());
+            stmt.setInt(5,cidadao.getId());
+            stmt.execute();
+            return true;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
     @Override
-    public boolean alterar() {
-        return super.alterar();
-    }
+    public boolean remover(int id) {
+        String sql = "DELETE FROM clientes Where id=?";
+        try {
+            PreparedStatement stmt = super.getConnection().prepareStatement(sql);
+            stmt.setInt(1, id);
+            stmt.execute();
+            return true;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
 
-    @Override
-    public boolean remover() {
-        return super.remover();
+        }
     }
 }

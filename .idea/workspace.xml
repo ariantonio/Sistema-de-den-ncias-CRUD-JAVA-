@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cac9a311-7b5b-446e-8684-7941eb956bef" name="Changes" comment="Criação inicial do DAO">
-      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/CidadaoDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Cidadao.java" afterDir="false" />
+    <list default="true" id="cac9a311-7b5b-446e-8684-7941eb956bef" name="Changes" comment="Modificações de conformidade com o diagrama de classe">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/SQL/A3_PSC.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/SQL/A3_PSC.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/DenunciaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/DenunciaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/FuncionarioGovernoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/FuncionarioGovernoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/CidadaoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/CidadaoDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAO/UsuarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/UsuarioDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/FuncionarioGoverno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/FuncionarioGoverno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Usuario.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700528514285</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Modificações de conformidade com o diagrama de classe">
+      <created>1700935727511</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1700935727511</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -169,7 +171,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/leo" />
+                        <option value="origin/master" />
                       </list>
                     </value>
                   </entry>
@@ -183,6 +185,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Criação inicial do DAO" />
-    <option name="LAST_COMMIT_MESSAGE" value="Criação inicial do DAO" />
+    <MESSAGE value="Modificações de conformidade com o diagrama de classe" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modificações de conformidade com o diagrama de classe" />
   </component>
 </project>
