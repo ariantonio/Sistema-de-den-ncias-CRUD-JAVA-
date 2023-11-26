@@ -4,15 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cac9a311-7b5b-446e-8684-7941eb956bef" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/driver/mysql-connector-j-8.2.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/Conexao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/DenunciaDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/FuncionarioGovernoDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/PoliticoDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/DAO/UsuarioDAO.java" afterDir="false" />
+    <list default="true" id="cac9a311-7b5b-446e-8684-7941eb956bef" name="Changes" comment="Finalização do CidadaoDAO">
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/RegistraCidadao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Denuncia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Denuncia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/CidadaoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/CidadaoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/Conexao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/Conexao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/FuncionarioGovernoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/FuncionarioGovernoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/InteracaoUsuarioOrgao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/RegistroJanela.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/RegistroJanela.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/TelaDeLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/TelaDeLogin.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +48,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "false",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "true",
     "create.test.in.the.same.root": "true",
     "git-widget-placeholder": "master",
     "last_opened_file_path": "C:/Users/vitor/Desktop/Unifacs/8 - Semestre/Progamação de soluçoes computacionais/CRUD/src/driver",
@@ -62,13 +66,26 @@
       <recent name="C:\Users\vitor\Desktop\Unifacs\8 - Semestre\Progamação de soluçoes computacionais\CRUD\src\driver" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TelaDeLogin">
+  <component name="RunManager" selected="Application.Principal">
     <configuration name="LoginScreen" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="view.LoginScreen" />
       <module name="A3" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="view.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Principal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="principal.Principal" />
+      <module name="A3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="principal.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -117,6 +134,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Principal" />
         <item itemvalue="Application.TelaDeLogin" />
         <item itemvalue="Application.TelaLogin" />
         <item itemvalue="Application.LoginScreen" />
@@ -133,6 +151,28 @@
       <option name="presentableId" value="Default" />
       <updated>1699276309980</updated>
     </task>
+    <task id="LOCAL-00001" summary="Criação inicial do DAO">
+      <created>1700528514285</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1700528514285</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Modificações de conformidade com o diagrama de classe">
+      <created>1700935727511</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1700935727511</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Finalização do CidadaoDAO">
+      <created>1700942196823</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1700942196823</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -140,10 +180,28 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Criação inicial do DAO" />
+    <MESSAGE value="Modificações de conformidade com o diagrama de classe" />
+    <MESSAGE value="Finalização do CidadaoDAO" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finalização do CidadaoDAO" />
   </component>
 </project>
