@@ -1,4 +1,7 @@
 package view;
+import controller.CidadaoService;
+import model.Cidadao;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -74,13 +77,14 @@ public class TelaDeLogin extends JFrame{
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                CidadaoService cidadaoService = new CidadaoService();
                 String username = usernameField.getText();
                 char[] password = passwordField.getPassword();
                 // Faça a validação aqui (substitua isso pela lógica real de autenticação)
                 if (username.isEmpty() || password.length == 0){
                     JOptionPane.showMessageDialog(rootPane, "Preencha todos os campos");
                 }
-                if (username.equals("usuario") && String.valueOf(password).equals("senha")) {
+                if (cidadaoService.consultaCidadao(username,String.valueOf(password))) {
                     JOptionPane.showMessageDialog(frame, "Login bem-sucedido!");
                     frame.dispose();
                     TelaPrincipalUsuario telausuario = new TelaPrincipalUsuario();

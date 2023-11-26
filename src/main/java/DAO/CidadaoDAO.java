@@ -38,6 +38,31 @@ public class CidadaoDAO extends UsuarioDAO {
         return cidadaoDb;
     }
 
+    public Cidadao pesquisar(String nome, String senha){
+        String sql = "SELECT * FROM Tbl_Cidadao WHERE nome = ? AND senha = ?";
+        Cidadao cidadaoDb = new Cidadao();
+        try {
+            PreparedStatement stmt = super.getConnection().prepareStatement(sql);
+            stmt.setString(1, nome);
+            stmt.setString(2, senha);
+            ResultSet resultSet = stmt.executeQuery();
+            if (resultSet.next()) {
+                cidadaoDb.setId(resultSet.getInt("id_Cidadao"));
+                cidadaoDb.setNome(resultSet.getString("nome"));
+                cidadaoDb.setEmail(resultSet.getString("email"));
+                cidadaoDb.setSenha(resultSet.getString("senha"));
+                cidadaoDb.setData_nascimento(String.valueOf(resultSet.getDate("dt_nascimento")));
+                System.out.println("login bem sucedido");
+            } else  {
+                System.out.println("erro ao reguistrar cidadoa do banco de dados");
+            }
+        } catch (SQLException e) {
+            System.out.println("erro ao consultat no banco de dados");
+            throw new RuntimeException(e);
+        }
+        return cidadaoDb;
+    }
+
     public boolean inserir(@NotNull Cidadao cidadao) {
         String sql = "INSERT INTO Tbl_Cidadao(nome, dt_nascimento, email, senha) VALUES(?, ?, ?, ?)";
         try {

@@ -8,9 +8,8 @@ import java.awt.event.ActionListener;
 import java.text.ParseException;
 import java.util.Arrays;
 
-import controller.RegistraCidadao;
+import controller.CidadaoService;
 import model.Cidadao;
-import model.Usuario;
 
 import javax.swing.text.MaskFormatter;
 import java.util.Date;
@@ -177,9 +176,9 @@ public class RegistroJanela extends JFrame {
                     cidadao.setEmail(emailUser);
                     cidadao.setIdade(idadeUser);
                     cidadao.setData_nascimento(String.valueOf(dataNascimento));
-                    RegistraCidadao registraCidadao = new RegistraCidadao();
+                    CidadaoService cidadaoService = new CidadaoService();
                     int resposta = JOptionPane.showConfirmDialog(null, "Confirma o cadastro?", "Confirmação", JOptionPane.YES_NO_OPTION);
-                    if (resposta == JOptionPane.YES_OPTION && registraCidadao.registraCidadao(cidadao)) {
+                    if (resposta == JOptionPane.YES_OPTION && cidadaoService.registraCidadao(cidadao)) {
                         dispose();
                     }else {
                         System.out.println("Erro no registro");

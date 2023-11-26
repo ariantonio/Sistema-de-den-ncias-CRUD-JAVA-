@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cac9a311-7b5b-446e-8684-7941eb956bef" name="Changes" comment="Finalização do CidadaoDAO">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/RegistraCidadao.java" afterDir="false" />
+    <list default="true" id="cac9a311-7b5b-446e-8684-7941eb956bef" name="Changes" comment="Registro de cidadão no banco de dados">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAO/CidadaoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/CidadaoDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/Conexao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/Conexao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/FuncionarioGovernoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/FuncionarioGovernoDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/InteracaoUsuarioOrgao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/RegistraCidadao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CidadaoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/RegistroJanela.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/RegistroJanela.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/TelaDeLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/TelaDeLogin.java" afterDir="false" />
     </list>
@@ -43,19 +38,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "false",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "true",
-    "create.test.in.the.same.root": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/vitor/Desktop/Unifacs/8 - Semestre/Progamação de soluçoes computacionais/CRUD/src/driver",
-    "settings.editor.selected.configurable": "Errors"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW&quot;: &quot;false&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW&quot;: &quot;true&quot;,
+    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/vitor/Desktop/Unifacs/8 - Semestre/Progamação de soluçoes computacionais/CRUD/src/driver&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Java&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\vitor\Desktop\Unifacs\8 - Semestre\Progamação de soluçoes computacionais\CRUD\src\driver" />
@@ -172,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700942196823</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Registro de cidadão no banco de dados">
+      <created>1700947207036</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1700947207036</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -202,6 +204,17 @@
     <MESSAGE value="Criação inicial do DAO" />
     <MESSAGE value="Modificações de conformidade com o diagrama de classe" />
     <MESSAGE value="Finalização do CidadaoDAO" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finalização do CidadaoDAO" />
+    <MESSAGE value="Registro de cidadão no banco de dados" />
+    <option name="LAST_COMMIT_MESSAGE" value="Registro de cidadão no banco de dados" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.RuntimeException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
