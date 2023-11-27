@@ -18,5 +18,9 @@ public class CidadaoService {
             return false;
         }
     }
+        public boolean alteraCidadao(Cidadao cidadao){
+        CidadaoDAO cidadaoDAO = new CidadaoDAO();
+        return cidadaoDAO.alterar(cidadao);
+    }
 
 }
