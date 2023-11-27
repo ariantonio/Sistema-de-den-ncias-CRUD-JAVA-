@@ -45,7 +45,7 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
         jMenuItem2.setText("jMenuItem2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Se liga cidadão!");
+        setTitle("Se liga, cidadão!");
 
         denunciasButton.setText("Minhas denúncias");
 
