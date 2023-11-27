@@ -58,6 +58,11 @@ public class TelaPrincipalFunc extends javax.swing.JFrame {
 
         conUsuarioButton.setText("Consultar usuários");
         conUsuarioButton.setToolTipText("");
+        conUsuarioButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                conUsuarioButtonActionPerformed(evt);
+            }
+        });
         denunciasButton.add(conUsuarioButton);
 
         jMenuBar1.add(denunciasButton);
@@ -130,6 +135,10 @@ public class TelaPrincipalFunc extends javax.swing.JFrame {
             System.exit(0);
         }
     }//GEN-LAST:event_exitButtonMouseClicked
+
+    private void conUsuarioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_conUsuarioButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_conUsuarioButtonActionPerformed
 
     /**
      * @param args the command line arguments
