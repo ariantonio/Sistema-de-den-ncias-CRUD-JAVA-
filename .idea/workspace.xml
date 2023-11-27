@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cac9a311-7b5b-446e-8684-7941eb956bef" name="Changes" comment="Registro de cidadão no banco de dados">
+    <list default="true" id="cac9a311-7b5b-446e-8684-7941eb956bef" name="Changes" comment="login do cidadão a partir dos dados no banco de dados">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/CidadaoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/CidadaoDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/RegistraCidadao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CidadaoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/RegistroJanela.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/RegistroJanela.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/TelaDeLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/TelaDeLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/DenunciaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/DenunciaDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Denuncia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Denuncia.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +59,7 @@
       <recent name="C:\Users\vitor\Desktop\Unifacs\8 - Semestre\Progamação de soluçoes computacionais\CRUD\src\driver" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Principal">
+  <component name="RunManager" selected="Application.TelaPerfilU">
     <configuration name="LoginScreen" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="view.LoginScreen" />
       <module name="A3" />
@@ -114,8 +112,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TeleDeLogin2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="view.TeleDeLogin2" />
+    <configuration name="TelaPerfilU" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="view.TelaPerfilU" />
       <module name="A3" />
       <extension name="coverage">
         <pattern>
@@ -129,11 +127,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TelaPerfilU" />
         <item itemvalue="Application.Principal" />
         <item itemvalue="Application.TelaDeLogin" />
         <item itemvalue="Application.TelaLogin" />
         <item itemvalue="Application.LoginScreen" />
-        <item itemvalue="Application.TeleDeLogin2" />
       </list>
     </recent_temporary>
   </component>
@@ -174,7 +172,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700947207036</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="login do cidadão a partir dos dados no banco de dados">
+      <created>1701000442086</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1701000442086</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -205,7 +210,8 @@
     <MESSAGE value="Modificações de conformidade com o diagrama de classe" />
     <MESSAGE value="Finalização do CidadaoDAO" />
     <MESSAGE value="Registro de cidadão no banco de dados" />
-    <option name="LAST_COMMIT_MESSAGE" value="Registro de cidadão no banco de dados" />
+    <MESSAGE value="login do cidadão a partir dos dados no banco de dados" />
+    <option name="LAST_COMMIT_MESSAGE" value="login do cidadão a partir dos dados no banco de dados" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

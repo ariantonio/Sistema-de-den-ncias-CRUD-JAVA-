@@ -41,7 +41,11 @@ public class Denuncia {
         Denuncia denuncia = new Denuncia( bairro, rua,  comp, descricao);
  //       DenunciaDAO.denunciasDb.add(denuncia);
         return true;
-    }    
+    }
+
+    public String getLocalizacao(){
+        return rua + bairro + comp;
+    }
     
     public void  atualizarstatus(){
 

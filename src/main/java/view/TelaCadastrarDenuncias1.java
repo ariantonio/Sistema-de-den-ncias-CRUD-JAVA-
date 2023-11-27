@@ -4,6 +4,7 @@
  */
 package view;
 
+import controller.DenunciaService;
 import model.Denuncia;
 import java.text.ParseException;
 import java.util.logging.Level;
@@ -164,7 +165,10 @@ public class TelaCadastrarDenuncias1 extends javax.swing.JFrame {
         } catch (Mensagens erro){
             JOptionPane.showMessageDialog(null, erro.getMessage());
         }
-        
+
+        Denuncia denuncia = new Denuncia();
+        DenunciaService denunciaService = new DenunciaService();
+        //denunciaService.registraDenuncia();
 
     }//GEN-LAST:event_nextButtonActionPerformed
 

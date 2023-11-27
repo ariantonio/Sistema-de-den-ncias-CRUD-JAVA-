@@ -1,6 +1,7 @@
 package DAO;
 
 import model.Denuncia;
+import org.jetbrains.annotations.NotNull;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -45,8 +46,19 @@ public class DenunciaDAO {
         }
         return denunciasDb;
     }
-    public boolean inserir(Denuncia denuncia){
-        return false;
+    public boolean inserir(@NotNull Denuncia denuncia){
+        String sql = "INSERT INTO Tbl_Denuncia(descrição, status_atualizacao, localizacao, imagem_anexada) VALUES(?, ?, ?, ?)";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.setString(1, denuncia.getDescricao());
+            stmt.setString(2, denuncia.getStatus());
+            stmt.setString(3, denuncia.getLocalizacao());
+            stmt.setString(4, denuncia.getFoto().toString());
+            stmt.execute();
+            return true;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
     public boolean alterar(Denuncia denuncia){
         return false;
