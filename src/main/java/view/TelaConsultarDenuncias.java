@@ -59,7 +59,7 @@ public class TelaConsultarDenuncias extends javax.swing.JFrame {
                 {null, null, null}
             },
             new String [] {
-                "ID", "Localização", "Desc."
+                "ID", "Localização Bairro/Rua/Comp", "Desc."
             }
         ) {
             Class[] types = new Class [] {

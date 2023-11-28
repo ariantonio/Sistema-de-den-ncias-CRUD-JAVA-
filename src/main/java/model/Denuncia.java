@@ -104,7 +104,7 @@ public class Denuncia {
         this.status = status;
     }
     public String getLocalizacao(){
-        String loc = bairro + rua  + comp;
+        String loc = bairro + "; " + rua + "; " + comp;
         return  loc;
     }
     
