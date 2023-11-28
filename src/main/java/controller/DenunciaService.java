@@ -10,6 +10,7 @@ public class DenunciaService {
 
     public boolean registraDenuncia(Denuncia denuncia){
         DenunciaDAO denunciaDAO = new DenunciaDAO();
+        //System.out.println(denuncia.toString());
         return denunciaDAO.inserir(denuncia);
     }
 

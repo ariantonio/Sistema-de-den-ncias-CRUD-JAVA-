@@ -55,6 +55,7 @@ public class DenunciaDAO {
             stmt.setString(3, denuncia.getLocalizacao());
             stmt.setString(4, null);
             stmt.execute();
+            System.out.println("cadastro da denuncia bem sucedida");
             return true;
         } catch (SQLException e) {
             throw new RuntimeException(e);

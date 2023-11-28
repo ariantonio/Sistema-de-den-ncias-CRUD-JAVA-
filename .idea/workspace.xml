@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cac9a311-7b5b-446e-8684-7941eb956bef" name="Changes" comment="">
+    <list default="true" id="cac9a311-7b5b-446e-8684-7941eb956bef" name="Changes" comment="modificaçoes leo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/SQL/A3_PSC.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/SQL/A3_PSC.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/Conexao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/Conexao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/DenunciaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/DenunciaDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/DenunciaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/DenunciaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Denuncia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Denuncia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/TelaCadastrarDenuncias1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/TelaCadastrarDenuncias1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/TelaCadastrarDenuncias2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/TelaCadastrarDenuncias2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/TelaCadastrarDenuncias.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/TelaCadastrarDenuncias.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +25,19 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="46d4df50-3902-4555-b968-2aae4bb37cba" />
+        <option name="url" value="https://github.com/VitorSena78/CRUD.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -41,27 +50,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW&quot;: &quot;false&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW&quot;: &quot;true&quot;,
-    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/vitor/Desktop/Unifacs/8 - Semestre/Progamação de soluçoes computacionais/CRUD/src/driver&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Java&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "false",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "true",
+    "create.test.in.the.same.root": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/vitor/Desktop/Unifacs/8 - Semestre/Progamação de soluçoes computacionais/CRUD-leo",
+    "settings.editor.selected.configurable": "preferences.sourceCode.Java"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\vitor\Desktop\Unifacs\8 - Semestre\Progamação de soluçoes computacionais\CRUD\src\main\java\view" />
       <recent name="C:\Users\vitor\Desktop\Unifacs\8 - Semestre\Progamação de soluçoes computacionais\CRUD\src\driver" />
       <recent name="C:\Users\vitor\Desktop\Unifacs\8 - Semestre\Progamação de soluçoes computacionais\CRUD\src\main\java\DAO" />
       <recent name="C:\Users\vitor\Desktop\Unifacs\8 - Semestre\Progamação de soluçoes computacionais\A3\src\main\java\view" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\vitor\Desktop\Unifacs\8 - Semestre\Progamação de soluçoes computacionais\CRUD\src\driver" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="model" />
+      <recent name="DAO" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Principal">
@@ -191,7 +205,21 @@
       <option name="project" value="LOCAL" />
       <updated>1701127014145</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="modificaçoes leo">
+      <created>1701133472102</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1701133472102</updated>
+    </task>
+    <task id="LOCAL-00008" summary="modificaçoes leo">
+      <created>1701133501380</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1701133501380</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -205,7 +233,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/leo" />
+                        <option value="origin/master" />
                       </list>
                     </value>
                   </entry>
@@ -224,7 +252,8 @@
     <MESSAGE value="Registro de cidadão no banco de dados" />
     <MESSAGE value="login do cidadão a partir dos dados no banco de dados" />
     <MESSAGE value="DenunciaService" />
-    <option name="LAST_COMMIT_MESSAGE" value="DenunciaService" />
+    <MESSAGE value="modificaçoes leo" />
+    <option name="LAST_COMMIT_MESSAGE" value="modificaçoes leo" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

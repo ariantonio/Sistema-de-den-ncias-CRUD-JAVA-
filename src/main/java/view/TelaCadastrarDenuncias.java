@@ -4,6 +4,7 @@
  */
 package view;
 
+import controller.DenunciaService;
 import model.Denuncia;
 
 import javax.swing.*;
@@ -187,7 +188,10 @@ public class TelaCadastrarDenuncias extends javax.swing.JFrame {
         } catch (Mensagens erro){
             JOptionPane.showMessageDialog(null, erro.getMessage());
         }
-        
+
+        DenunciaService denunciaService = new DenunciaService();
+        Denuncia denuncia = new  Denuncia(bairro,rua,comp,desc);
+        denunciaService.registraDenuncia(denuncia);
 
     }//GEN-LAST:event_nextButtonActionPerformed
 

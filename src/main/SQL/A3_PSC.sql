@@ -33,7 +33,7 @@ senha varchar(8) not null
 create table Tbl_Denuncia(
 id_Tipo_de_problema int auto_increment not null primary key,
 descrição varchar(2000) not null,
-status_atualizacao varchar(40) not null,
+status_atualizacao varchar(40),
 localizacao varchar(250) not null,
 imagem_anexada longblob
 );
