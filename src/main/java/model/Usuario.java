@@ -88,5 +88,5 @@ public class Usuario {
 
     public void setData_nascimento(String data_nascimento) {
         this.data_nascimento = data_nascimento;
-
+    }    
 }

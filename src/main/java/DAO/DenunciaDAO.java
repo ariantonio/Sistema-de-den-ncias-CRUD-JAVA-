@@ -2,7 +2,6 @@ package DAO;
 
 import model.Denuncia;
 import org.jetbrains.annotations.NotNull;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;

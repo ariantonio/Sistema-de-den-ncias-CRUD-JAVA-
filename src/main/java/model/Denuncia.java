@@ -106,7 +106,9 @@ public class Denuncia {
     public void setStatus(String status) {
         this.status = status;
     }
-
+    public String getLocalizacao(){
+        return rua + bairro + comp;
+    }
     @Override
     public String toString() {
         return "Denuncia{" +

@@ -4,6 +4,7 @@
  */
 package view;
 
+import controller.DenunciaService;
 import model.Denuncia;
 import java.text.ParseException;
 import java.util.logging.Level;
@@ -230,12 +231,7 @@ public class TelaCadastrarDenuncias extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(TelaCadastrarDenuncias.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
             Logger.getLogger(TelaCadastrarDenuncias.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            Logger.getLogger(TelaCadastrarDenuncias.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            Logger.getLogger(TelaCadastrarDenuncias.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            Logger.getLogger(TelaCadastrarDenuncias.class.getName()).log(Level.SEVERE, null, ex);
+
 
         }
         //</editor-fold>
