@@ -10,6 +10,7 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
 import java.util.List;
+import model.Usuario;
 
 /**
  *
@@ -39,8 +40,8 @@ public class TelaConsultarDenuncias extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableDenuncias = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jTextField1 = new javax.swing.JTextField();
+        campoDesc = new javax.swing.JTextArea();
+        campoLoc = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         editButton = new javax.swing.JButton();
         eraseButton = new javax.swing.JButton();
@@ -50,22 +51,22 @@ public class TelaConsultarDenuncias extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jTableDenuncias.setModel(new DefaultTableModel(
+        jTableDenuncias.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "ID", "Bairro", "Rua", "Status", "Desc."
+                "ID", "Localização", "Desc."
             }
         ) {
             Class[] types = new Class [] {
-                Integer.class, String.class, String.class, Object.class, String.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -76,14 +77,22 @@ public class TelaConsultarDenuncias extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jTableDenuncias.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableDenunciasMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTableDenuncias);
         if (jTableDenuncias.getColumnModel().getColumnCount() > 0) {
             jTableDenuncias.getColumnModel().getColumn(0).setResizable(false);
+            jTableDenuncias.getColumnModel().getColumn(1).setResizable(false);
+            jTableDenuncias.getColumnModel().getColumn(2).setResizable(false);
         }
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane2.setViewportView(jTextArea1);
+        campoDesc.setColumns(20);
+        campoDesc.setLineWrap(true);
+        campoDesc.setRows(5);
+        jScrollPane2.setViewportView(campoDesc);
 
         editButton.setText("Editar denúncia");
         editButton.addActionListener(new java.awt.event.ActionListener() {
@@ -132,7 +141,7 @@ public class TelaConsultarDenuncias extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(6, 6, 6)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(campoLoc, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel1)
                                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -164,7 +173,7 @@ public class TelaConsultarDenuncias extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jScrollPane2)
                         .addGroup(layout.createSequentialGroup()
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(campoLoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
                             .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(0, 0, Short.MAX_VALUE))))
@@ -177,10 +186,19 @@ public class TelaConsultarDenuncias extends javax.swing.JFrame {
 
     public void carregarTabela() {
 
-    DefaultTableModel model = (DefaultTableModel) this.jTableDenuncias.getModel();
-    model.setNumRows(0);
+        DefaultTableModel model = (DefaultTableModel) this.jTableDenuncias.getModel();
+        model.setNumRows(0);
 
-    List<Denuncia> lista = new ArrayList<>();
+        List<Denuncia> lista = new ArrayList<>();
+        lista = denuncia.getLista();
+
+        for (Denuncia d : lista){
+            model.addRow(new Object[]{
+            d.getId(),
+            d.getLocalizacaoC(),
+            d.getDescricao()
+            });
+        }
 
     }
     
@@ -203,6 +221,19 @@ public class TelaConsultarDenuncias extends javax.swing.JFrame {
         // TODO add your handling code here:
         saveButton.setVisible(true);
     }//GEN-LAST:event_editButtonActionPerformed
+
+    private void jTableDenunciasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableDenunciasMouseClicked
+        // TODO add your handling code here:
+        if (this.jTableDenuncias.getSelectedRow() != -1) {
+            String loc = this.jTableDenuncias.getValueAt(this.jTableDenuncias.getSelectedRow(), 1).toString();
+            String desc = this.jTableDenuncias.getValueAt(this.jTableDenuncias.getSelectedRow(), 2).toString();
+
+
+            this.campoLoc.setText(loc);
+            this.campoDesc.setText(desc);
+
+        }
+    }//GEN-LAST:event_jTableDenunciasMouseClicked
 
     /**
      * @param args the command line arguments
@@ -242,14 +273,14 @@ public class TelaConsultarDenuncias extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backButton;
+    private javax.swing.JTextArea campoDesc;
+    private javax.swing.JTextField campoLoc;
     private javax.swing.JButton editButton;
     private javax.swing.JButton eraseButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTableDenuncias;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JButton saveButton;
     // End of variables declaration//GEN-END:variables

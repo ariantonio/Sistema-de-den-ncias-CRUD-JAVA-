@@ -1,8 +1,7 @@
 package controller;
 
-import DAO.CidadaoDAO;
 import DAO.DenunciaDAO;
-import model.Cidadao;
+import java.util.List;
 import model.Denuncia;
 
 public class DenunciaService {
@@ -14,13 +13,16 @@ public class DenunciaService {
         return denunciaDAO.inserir(denuncia);
     }
 
-
-
     public Denuncia getDenuncia() {
         return denuncia;
     }
 
     public void setDenuncia(Denuncia denuncia) {
         this.denuncia = denuncia;
-    }
-}
+    } 
+
+    public List<Denuncia> listarDenuncia() {
+        DenunciaDAO denunciaDAO = new DenunciaDAO();
+        return denunciaDAO.listar();
+    }    
+}   

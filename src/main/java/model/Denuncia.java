@@ -1,5 +1,6 @@
 package model;
 
+import controller.DenunciaService;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,10 +23,6 @@ public class Denuncia {
     this.comp = comp;    
     this.descricao = descricao;
     
-    }
-     public ArrayList getLista(){
-     // DenunciaDAO.denunciasDb;
-     return null;
     }
 
     public boolean cadastro( String bairro,String rua, String comp, String descricao){
@@ -107,8 +104,14 @@ public class Denuncia {
         this.status = status;
     }
     public String getLocalizacao(){
-        return rua + bairro + comp;
+        String loc = bairro + rua  + comp;
+        return  loc;
     }
+    
+        public String getLocalizacaoC(){
+        return  bairro;
+    }
+    
     @Override
     public String toString() {
         return "Denuncia{" +
@@ -124,4 +127,11 @@ public class Denuncia {
                 ", localizacao='" + getLocalizacao() + '\'' +
                 '}';
     }
+    
+    public List<Denuncia> getLista() {
+        DenunciaService denunciaService = new DenunciaService();
+        List<Denuncia> listaDenuncia = denunciaService.listarDenuncia();
+        
+        return listaDenuncia;
+    }    
 }
