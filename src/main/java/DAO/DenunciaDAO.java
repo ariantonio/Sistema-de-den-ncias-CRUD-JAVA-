@@ -3,7 +3,6 @@ package DAO;
 import model.Cidadao;
 import model.Denuncia;
 import org.jetbrains.annotations.NotNull;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,16 +11,15 @@ public class DenunciaDAO {
     private Connection connection;
 
     public DenunciaDAO() {
-        this.connection = Conexao.getconection();
+        this.connection=Conexao.getconection();
     }
-
-    public List<Denuncia> listar() {
+    public List<Denuncia> listar(){
         String sql = "SELECT * FROM Tbl_Denuncia";
         List<Denuncia> denunciasDb = new ArrayList<>();
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
             ResultSet resultSet = stmt.executeQuery();
-            while (resultSet.next()) {
+            while (resultSet.next()){
                 Denuncia denuncia = new Denuncia();
                 denuncia.setId(resultSet.getInt("id_Denuncia"));
                 // Mapeando a lista de fotos
@@ -41,9 +39,9 @@ public class DenunciaDAO {
 
                 denuncia.setDescricao(resultSet.getString("descrição"));
                 denuncia.setLocalizacao(resultSet.getString("localizacao"));
-                //               denuncia.setRua(resultSet.getString("rua"));
-                //               denuncia.setComp(resultSet.getString("complemento"));
-                //               denuncia.setStatus(resultSet.getString("status"));
+ //               denuncia.setRua(resultSet.getString("rua"));
+ //               denuncia.setComp(resultSet.getString("complemento"));
+ //               denuncia.setStatus(resultSet.getString("status"));
                 denunciasDb.add(denuncia);
             }
         } catch (SQLException e) {
@@ -73,7 +71,7 @@ public class DenunciaDAO {
         return cidadaoDb;
     }*/
 
-    public boolean inserir(@NotNull Denuncia denuncia) {
+    public boolean inserir(@NotNull Denuncia denuncia){
         String sql = "INSERT INTO Tbl_Denuncia(descrição, status_atualizacao, localizacao, imagem_anexada) VALUES(?, ?, ?, ?)";
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
@@ -88,22 +86,9 @@ public class DenunciaDAO {
             throw new RuntimeException(e);
         }
     }
-
-    public boolean alterar(@NotNull Denuncia denuncia) {
-        String sql = "UPDATE Tbl_Denuncia SET descrição=?,  localizacao=? WHERE id_Denuncia=?";
-        try {
-            PreparedStatement stmt = connection.prepareStatement(sql);
-            stmt.setString(1, denuncia.getDescricao());
-            stmt.setString(2, denuncia.getLocalizacaoC());
-            stmt.setInt(3, denuncia.getId());
-            stmt.execute();
-            System.out.println("update de statos!");
-            return true;
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+    public boolean alterar(Denuncia denuncia){
+        return false;
     }
-
     public boolean remover(int id) {
         String sql = "DELETE FROM Tbl_Denuncia WHERE id_Denuncia=?";
         try {

@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cac9a311-7b5b-446e-8684-7941eb956bef" name="Changes" comment="deletar deenuncia">
+    <list default="true" id="cac9a311-7b5b-446e-8684-7941eb956bef" name="Changes" comment=".">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/SQL/A3_PSC.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/SQL/A3_PSC.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/Conexao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/Conexao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAO/DenunciaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/DenunciaDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/DenunciaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/DenunciaService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Denuncia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Denuncia.java" afterDir="false" />
@@ -24,11 +26,6 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="PREVIOUS_COMMIT_AUTHORS">
-      <list>
-        <option value="vitor &lt;vitorsena78@gmail.com&gt;" />
-      </list>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -274,14 +271,7 @@
       <option name="project" value="LOCAL" />
       <updated>1701139479719</updated>
     </task>
-    <task id="LOCAL-00016" summary="deletar deenuncia">
-      <created>1701177840311</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1701177840311</updated>
-    </task>
-    <option name="localTasksCounter" value="17" />
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -318,10 +308,7 @@
     <MESSAGE value="cadastro denuncia no banco de dados" />
     <MESSAGE value="alteração nome da chave primaria" />
     <MESSAGE value="." />
-    <MESSAGE value="deletar deenuncia" />
-    <option name="LAST_COMMIT_MESSAGE" value="deletar deenuncia" />
-    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
-    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

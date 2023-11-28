@@ -18,11 +18,6 @@ public class DenunciaService {
         return denunciaDAO.remover(id);
     }
 
-    public boolean editarDenuncia(Denuncia denuncia) {
-        DenunciaDAO denunciaDAO = new DenunciaDAO();
-        return denunciaDAO.alterar(denuncia);
-    }
-
     public Denuncia getDenuncia() {
         return denuncia;
     }

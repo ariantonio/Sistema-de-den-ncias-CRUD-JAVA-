@@ -26,12 +26,7 @@ public class Denuncia {
         this.rua = rua;
         this.comp = comp;
         this.descricao = descricao;
-    }
 
-    public Denuncia(int id, String descricao, String localizacao) {
-        this.id = id;
-        this.descricao = descricao;
-        this.localizacao = localizacao;
     }
 
     public boolean cadastro(String bairro, String rua, String comp, String descricao) {
