@@ -13,7 +13,7 @@ public class Usuario {
     private String senha;
     private int idade; //não tem no diagrama (remover do codigo ou acrecentar ao diagrama)
     private String email;
-        private String data_nascimento;
+    private String data_nascimento;
 
     public Usuario() {
     }
@@ -28,7 +28,7 @@ public class Usuario {
         this.senha = senha;
         this.email = email;
     }
- 
+
     public Usuario(String nomeUsuario, String senha, int idade, String email) {
         this.nome = nomeUsuario;
         this.senha = senha;
@@ -75,18 +75,19 @@ public class Usuario {
     public void setId(int id) {
         this.id = id;
     }
-  
-    public List getLista(){
+
+    public List getLista() {
         CidadaoService cidadaoService = new CidadaoService();
         List<Cidadao> listaCidadao = cidadaoService.listarCidadao();
-        
+
         return listaCidadao;
     }
-        public String getData_nascimento() {
+
+    public String getData_nascimento() {
         return data_nascimento;
     }
 
     public void setData_nascimento(String data_nascimento) {
         this.data_nascimento = data_nascimento;
-
+    }
 }

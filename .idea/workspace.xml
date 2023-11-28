@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cac9a311-7b5b-446e-8684-7941eb956bef" name="Changes" comment="alteração nome da chave primaria">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Denuncia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Denuncia.java" afterDir="false" />
-    </list>
+    <list default="true" id="cac9a311-7b5b-446e-8684-7941eb956bef" name="Changes" comment="." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -238,7 +235,21 @@
       <option name="project" value="LOCAL" />
       <updated>1701136716794</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary=".">
+      <created>1701137702583</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1701137702583</updated>
+    </task>
+    <task id="LOCAL-00013" summary=".">
+      <created>1701137834588</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1701137834588</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -252,7 +263,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/master" />
+                        <option value="origin/leo" />
                       </list>
                     </value>
                   </entry>
@@ -274,7 +285,8 @@
     <MESSAGE value="modificaçoes leo" />
     <MESSAGE value="cadastro denuncia no banco de dados" />
     <MESSAGE value="alteração nome da chave primaria" />
-    <option name="LAST_COMMIT_MESSAGE" value="alteração nome da chave primaria" />
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
