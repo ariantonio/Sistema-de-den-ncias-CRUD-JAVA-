@@ -44,11 +44,11 @@ insert into Tbl_Cidadao (nome, dt_nascimento, email, senha) values ();
 #-------------------------------------
 ALTER TABLE Tbl_Fun_GOV
 ADD CONSTRAINT fk_Cidadao_fun_gov
-FOREIGN KEY (id_Cidadao) REFERENCES Tbl_Cidadao(id_Cidadao);
+FOREIGN KEY (id_Fun_GOV) REFERENCES Tbl_Cidadao(id_Cidadao);
 
 ALTER TABLE Tbl_Politico
 ADD CONSTRAINT fk_Cidadao_politico
-FOREIGN KEY (id_Cidadao) REFERENCES Tbl_Cidadao(id_Cidadao);
+FOREIGN KEY (id_Politico) REFERENCES Tbl_Cidadao(id_Cidadao);
 
 ALTER TABLE Tbl_Cidadao
 ADD CONSTRAINT ck_tamanho_senha_Cidadao

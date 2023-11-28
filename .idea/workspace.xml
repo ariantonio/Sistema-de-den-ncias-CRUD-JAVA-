@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cac9a311-7b5b-446e-8684-7941eb956bef" name="Changes" comment="cadastro denuncia no banco de dados">
+    <list default="true" id="cac9a311-7b5b-446e-8684-7941eb956bef" name="Changes" comment=".">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/SQL/A3_PSC.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/SQL/A3_PSC.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,7 +224,42 @@
       <option name="project" value="LOCAL" />
       <updated>1701134893057</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="alteração nome da chave primaria">
+      <created>1701135444161</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1701135444161</updated>
+    </task>
+    <task id="LOCAL-00011" summary="alteração nome da chave primaria">
+      <created>1701136716794</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1701136716794</updated>
+    </task>
+    <task id="LOCAL-00012" summary=".">
+      <created>1701137702583</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1701137702583</updated>
+    </task>
+    <task id="LOCAL-00013" summary=".">
+      <created>1701137834588</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1701137834588</updated>
+    </task>
+    <task id="LOCAL-00014" summary=".">
+      <created>1701137981356</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1701137981356</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -237,7 +273,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/master" />
+                        <option value="origin/leo" />
                       </list>
                     </value>
                   </entry>
@@ -258,7 +294,9 @@
     <MESSAGE value="DenunciaService" />
     <MESSAGE value="modificaçoes leo" />
     <MESSAGE value="cadastro denuncia no banco de dados" />
-    <option name="LAST_COMMIT_MESSAGE" value="cadastro denuncia no banco de dados" />
+    <MESSAGE value="alteração nome da chave primaria" />
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
