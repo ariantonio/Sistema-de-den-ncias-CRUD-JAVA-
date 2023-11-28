@@ -30,6 +30,8 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
 
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         denunciasButton = new javax.swing.JMenu();
         cadDenunciaButton = new javax.swing.JMenuItem();
@@ -45,6 +47,12 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Se liga, cidadão!");
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel1.setText("Seja Bem-Vindo(a) ao Se liga, Cidadão!");
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel2.setText("Para utilizar as funções utilize os menus no canto superior esquerdo.");
 
         denunciasButton.setText("Minhas denúncias");
 
@@ -106,11 +114,23 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1068, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(164, 164, 164)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(60, 60, 60)))
+                .addContainerGap(140, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 616, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(155, 155, 155)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(165, Short.MAX_VALUE))
         );
 
         pack();
@@ -196,6 +216,8 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
     private javax.swing.JMenu denunciasButton;
     private javax.swing.JMenuItem editProfileButton;
     private javax.swing.JMenu exitButton;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
