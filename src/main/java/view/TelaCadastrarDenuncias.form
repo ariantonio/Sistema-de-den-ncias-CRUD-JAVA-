@@ -127,7 +127,7 @@
     </Container>
     <Component class="javax.swing.JButton" name="nextButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Pr&#xf3;ximo"/>
+        <Property name="text" type="java.lang.String" value="Finalizar"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nextButtonActionPerformed"/>

@@ -4,13 +4,12 @@
  */
 package view;
 
-import controller.DenunciaService;
 import model.Denuncia;
-
-import javax.swing.*;
+import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+import javax.swing.JOptionPane;
+import model.Denuncia;
 
 /**
  *
@@ -70,7 +69,7 @@ public class TelaCadastrarDenuncias extends javax.swing.JFrame {
         textoComp.setRows(5);
         jScrollPane1.setViewportView(textoComp);
 
-        nextButton.setText("Próximo");
+        nextButton.setText("Finalizar");
         nextButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nextButtonActionPerformed(evt);
@@ -193,6 +192,7 @@ public class TelaCadastrarDenuncias extends javax.swing.JFrame {
         Denuncia denuncia = new  Denuncia(bairro,rua,comp,desc);
         denunciaService.registraDenuncia(denuncia);
 
+
     }//GEN-LAST:event_nextButtonActionPerformed
 
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
@@ -221,6 +221,14 @@ public class TelaCadastrarDenuncias extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
+
+            java.util.logging.Logger.getLogger(TelaCadastrarDenuncias.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(TelaCadastrarDenuncias.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(TelaCadastrarDenuncias.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(TelaCadastrarDenuncias.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
             Logger.getLogger(TelaCadastrarDenuncias.class.getName()).log(Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
             Logger.getLogger(TelaCadastrarDenuncias.class.getName()).log(Level.SEVERE, null, ex);
@@ -228,6 +236,7 @@ public class TelaCadastrarDenuncias extends javax.swing.JFrame {
             Logger.getLogger(TelaCadastrarDenuncias.class.getName()).log(Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             Logger.getLogger(TelaCadastrarDenuncias.class.getName()).log(Level.SEVERE, null, ex);
+
         }
         //</editor-fold>
         //</editor-fold>

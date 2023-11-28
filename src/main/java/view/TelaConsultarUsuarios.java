@@ -10,6 +10,11 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import model.Usuario;
+import DAO.CidadaoDAO;
+import controller.CidadaoService;
 
 /**
  *
@@ -46,26 +51,29 @@ public class TelaConsultarUsuarios extends javax.swing.JFrame {
         campoEmail = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        campoIdade = new javax.swing.JTextField();
+        campoData = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Consultar usuários");
 
         jTableUsuarios.setModel(new DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "ID", "Nome", "Idade", "Email", "Qtd. de denúncias"
+                "ID", "Nome", "Data de nascimento", "Email"
             }
         ) {
             Class[] types = new Class [] {
-                Integer.class, String.class, String.class, Object.class, String.class
+
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
+
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -76,10 +84,12 @@ public class TelaConsultarUsuarios extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jTableUsuarios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableUsuariosMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTableUsuarios);
-        if (jTableUsuarios.getColumnModel().getColumnCount() > 0) {
-            jTableUsuarios.getColumnModel().getColumn(0).setResizable(false);
-        }
 
         eraseButton.setText("Apagar usuário");
         eraseButton.addActionListener(new java.awt.event.ActionListener() {
@@ -109,7 +119,7 @@ public class TelaConsultarUsuarios extends javax.swing.JFrame {
 
         jLabel3.setText("Email:");
 
-        jLabel4.setText("Idade:");
+        jLabel4.setText("Data de nascimento:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -120,12 +130,14 @@ public class TelaConsultarUsuarios extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(0, 943, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(eraseButton, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
+                        .addComponent(eraseButton, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 805, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 805, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(71, 71, 71))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(6, 6, 6)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -135,11 +147,10 @@ public class TelaConsultarUsuarios extends javax.swing.JFrame {
                                     .addComponent(campoNome, javax.swing.GroupLayout.DEFAULT_SIZE, 530, Short.MAX_VALUE)
                                     .addComponent(campoEmail))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(campoIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(163, 163, 163)))))
-                .addGap(29, 29, 29))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(campoData))
+                                .addGap(198, 198, 198))))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -160,7 +171,7 @@ public class TelaConsultarUsuarios extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(campoNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(campoIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(campoData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -186,7 +197,7 @@ public class TelaConsultarUsuarios extends javax.swing.JFrame {
             model.addRow(new Object[]{
             u.getId(),
             u.getNome(),
-            u.getIdade(),
+            u.getData_nascimento(),
             u.getEmail()            
             });
         }
@@ -210,6 +221,22 @@ public class TelaConsultarUsuarios extends javax.swing.JFrame {
     private void campoEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoEmailActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_campoEmailActionPerformed
+
+    private void jTableUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableUsuariosMouseClicked
+        // TODO add your handling code here:
+        
+        if (this.jTableUsuarios.getSelectedRow() != -1) {
+            String nome = this.jTableUsuarios.getValueAt(this.jTableUsuarios.getSelectedRow(), 1).toString();
+            String data = this.jTableUsuarios.getValueAt(this.jTableUsuarios.getSelectedRow(), 2).toString();
+            String email = this.jTableUsuarios.getValueAt(this.jTableUsuarios.getSelectedRow(), 3).toString();
+
+
+            this.campoNome.setText(nome);
+            this.campoData.setText(data);
+            this.campoEmail.setText(email);
+
+        }
+    }//GEN-LAST:event_jTableUsuariosMouseClicked
 
     /**
      * @param args the command line arguments
@@ -251,8 +278,8 @@ public class TelaConsultarUsuarios extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backButton;
+    private javax.swing.JTextField campoData;
     private javax.swing.JTextField campoEmail;
-    private javax.swing.JTextField campoIdade;
     private javax.swing.JTextField campoNome;
     private javax.swing.JButton eraseButton;
     private javax.swing.JLabel jLabel1;

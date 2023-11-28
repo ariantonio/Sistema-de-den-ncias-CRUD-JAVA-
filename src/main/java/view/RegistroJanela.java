@@ -137,7 +137,7 @@ public class RegistroJanela extends JFrame {
                     LocalDate dataNascimento;
                     if (value instanceof String string) {
                         // tentar converter a String para uma data
-                        SimpleDateFormat dateFormat = new SimpleDateFormat("  dd / mm / yyyy");
+                        SimpleDateFormat dateFormat = new SimpleDateFormat("  dd / MM / yyyy");
                         try {
                             Date dataEntrada = dateFormat.parse(string);
                             dataNascimento = dataEntrada.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
