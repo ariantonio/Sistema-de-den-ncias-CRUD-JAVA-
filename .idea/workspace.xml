@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cac9a311-7b5b-446e-8684-7941eb956bef" name="Changes" comment="alteração nome da chave primaria">
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/DenunciaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/DenunciaDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Denuncia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Denuncia.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701135444161</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="alteração nome da chave primaria">
+      <created>1701136716794</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1701136716794</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

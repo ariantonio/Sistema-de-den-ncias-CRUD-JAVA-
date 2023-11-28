@@ -43,7 +43,7 @@ public class Denuncia {
         return true;
     }
 
-    public String getLocalizacao() {
+    public String getLocalizacao(){
         return rua + bairro + comp;
     }
 
