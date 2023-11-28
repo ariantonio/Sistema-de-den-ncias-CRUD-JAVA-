@@ -83,6 +83,11 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
 
         quitButton.setText("Desconectar");
         quitButton.setToolTipText("");
+        quitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                quitButtonActionPerformed(evt);
+            }
+        });
         profileButton.add(quitButton);
 
         jMenuBar1.add(profileButton);
@@ -142,6 +147,12 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
         TelaPerfilU telaperfil = new TelaPerfilU();
         telaperfil.setVisible(true);
     }//GEN-LAST:event_editProfileButtonActionPerformed
+
+    private void quitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quitButtonActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        TelaDeLogin telalogin = new TelaDeLogin();
+    }//GEN-LAST:event_quitButtonActionPerformed
 
     /**
      * @param args the command line arguments

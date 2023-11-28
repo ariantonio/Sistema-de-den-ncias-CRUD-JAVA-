@@ -75,7 +75,7 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
-    <Property name="title" type="java.lang.String" value="Se liga cidad&#xe3;o!"/>
+    <Property name="title" type="java.lang.String" value="Se liga, cidad&#xe3;o!"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="menuBar" type="java.lang.String" value="jMenuBar1"/>
