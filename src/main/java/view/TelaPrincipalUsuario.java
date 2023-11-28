@@ -131,7 +131,7 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
 
     private void cadDenunciaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadDenunciaButtonActionPerformed
         // TODO add your handling code here:
-        TelaCadastrarDenuncias1 telacad = new TelaCadastrarDenuncias1();
+        TelaCadastrarDenuncias telacad = new TelaCadastrarDenuncias();
         telacad.setVisible(true);
     }//GEN-LAST:event_cadDenunciaButtonActionPerformed
 

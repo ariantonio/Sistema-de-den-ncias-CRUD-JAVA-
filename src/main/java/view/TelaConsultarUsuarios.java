@@ -9,6 +9,8 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.Usuario;
+import DAO.CidadaoDAO;
+import controller.CidadaoService;
 
 /**
  *
@@ -175,9 +177,20 @@ public class TelaConsultarUsuarios extends javax.swing.JFrame {
 
     public void carregarTabela() {
 
-    DefaultTableModel model = (DefaultTableModel) this.jTableUsuarios.getModel();
-    model.setNumRows(0);
+        DefaultTableModel model = (DefaultTableModel) this.jTableUsuarios.getModel();
+        model.setNumRows(0);
 
+        List<Usuario> lista = new ArrayList<>();
+        lista = usuario.getLista();
+        
+        for (Usuario u : lista){
+            model.addRow(new Object[]{
+            u.getId(),
+            u.getNome(),
+            u.getIdade(),
+            u.getEmail()            
+            });
+        }
     }
     
     private void eraseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eraseButtonActionPerformed

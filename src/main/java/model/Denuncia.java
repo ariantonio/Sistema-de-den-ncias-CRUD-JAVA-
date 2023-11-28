@@ -29,15 +29,16 @@ public class Denuncia {
      return null;
     }
      
-    public boolean cadastro1( String bairro,String rua, String comp){
+    public boolean cadastro( String bairro,String rua, String comp, String descricao){
         this.bairro = bairro;
         this.rua = rua;
         this.comp = comp;
+        this.descricao = descricao;
         
         return true;
     }
     public boolean cadastro2(String descricao){
-        this.descricao = descricao;
+
         Denuncia denuncia = new Denuncia( bairro, rua,  comp, descricao);
  //       DenunciaDAO.denunciasDb.add(denuncia);
         return true;

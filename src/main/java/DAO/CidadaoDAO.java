@@ -54,10 +54,10 @@ public class CidadaoDAO extends UsuarioDAO {
                 cidadaoDb.setData_nascimento(String.valueOf(resultSet.getDate("dt_nascimento")));
                 System.out.println("login bem sucedido");
             } else  {
-                System.out.println("erro ao reguistrar cidadoa do banco de dados");
+                System.out.println("erro ao reguistrar cidadão do banco de dados");
             }
         } catch (SQLException e) {
-            System.out.println("erro ao consultat no banco de dados");
+            System.out.println("erro ao consultar no banco de dados");
             throw new RuntimeException(e);
         }
         return cidadaoDb;
