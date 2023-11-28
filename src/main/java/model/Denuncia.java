@@ -31,10 +31,19 @@ public class Denuncia {
         this.comp = comp;
         this.descricao = descricao;
 
-        
         return true;
     }
-    
+    public boolean cadastro2(String descricao){
+        this.descricao = descricao;
+        Denuncia denuncia = new Denuncia( bairro, rua,  comp, descricao);
+ //       DenunciaDAO.denunciasDb.add(denuncia);
+        return true;
+    }
+
+    public String getLocalizacao(){
+        return rua + bairro + comp;
+    }
+
     public void  atualizarstatus(){
 
     }
