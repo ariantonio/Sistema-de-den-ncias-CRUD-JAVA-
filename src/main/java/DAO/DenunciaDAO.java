@@ -3,7 +3,6 @@ package DAO;
 import model.Cidadao;
 import model.Denuncia;
 import org.jetbrains.annotations.NotNull;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,8 +21,9 @@ public class DenunciaDAO {
             ResultSet resultSet = stmt.executeQuery();
             while (resultSet.next()){
                 Denuncia denuncia = new Denuncia();
-                denuncia.setId(resultSet.getInt("id"));
+                denuncia.setId(resultSet.getInt("id_Denuncia"));
                 // Mapeando a lista de fotos
+                /*
                 List<String> fotos = new ArrayList<>();
                 // Supondo que as fotos estejam armazenadas em coluna chamada "foto" e separadas por vírgula
                 String fotosString = resultSet.getString("foto");
@@ -35,8 +35,10 @@ public class DenunciaDAO {
                 }
                 denuncia.setFoto(fotos);
                 denuncia.setTipoDeProblema(resultSet.getString("tipoDeProblema"));
-                denuncia.setDescricao(resultSet.getString("descricao"));
-                denuncia.setBairro(resultSet.getString("bairro"));
+                */
+
+                denuncia.setDescricao(resultSet.getString("descrição"));
+                denuncia.setBairro(resultSet.getString("localizacao"));
  //               denuncia.setRua(resultSet.getString("rua"));
  //               denuncia.setComp(resultSet.getString("complemento"));
  //               denuncia.setStatus(resultSet.getString("status"));
