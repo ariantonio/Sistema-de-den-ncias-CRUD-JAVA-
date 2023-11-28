@@ -40,10 +40,6 @@ public class Denuncia {
         return true;
     }
 
-    public String getLocalizacao(){
-        return rua + bairro + comp;
-    }
-
     public void  atualizarstatus(){
 
     }
