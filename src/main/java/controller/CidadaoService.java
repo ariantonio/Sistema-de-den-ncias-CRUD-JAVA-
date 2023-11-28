@@ -21,14 +21,19 @@ public class CidadaoService {
             return false;
         }
     }
-        public boolean alteraCidadao(Cidadao cidadao){
+    public boolean alteraCidadao(Cidadao cidadao){
         CidadaoDAO cidadaoDAO = new CidadaoDAO();
         return cidadaoDAO.alterar(cidadao);
     }
         
-        public List<Cidadao> listarCidadao(){
+    public List<Cidadao> listarCidadao(){
         CidadaoDAO cidadaoDAO = new CidadaoDAO();
         return cidadaoDAO.listar();
     }
-
+/*      
+    public boolean removeCidadao(Cidadao id){
+        CidadaoDAO cidadaoDAO = new CidadaoDAO();
+        return cidadaoDAO.remover();
+    }
+/*
 }

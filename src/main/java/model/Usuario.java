@@ -12,6 +12,7 @@ public class Usuario {
     private String senha;
     private int idade; //não tem no diagrama (remover do codigo ou acrecentar ao diagrama)
     private String email;
+        private String data_nascimento;
 
     public Usuario() {
     }
@@ -79,5 +80,12 @@ public class Usuario {
         List<Cidadao> listaCidadao = cidadaoService.listarCidadao();
         
         return listaCidadao;
+    }
+        public String getData_nascimento() {
+        return data_nascimento;
+    }
+
+    public void setData_nascimento(String data_nascimento) {
+        this.data_nascimento = data_nascimento;
     }
 }

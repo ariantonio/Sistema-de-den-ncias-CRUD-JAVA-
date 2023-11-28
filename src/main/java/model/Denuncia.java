@@ -37,12 +37,6 @@ public class Denuncia {
         
         return true;
     }
-    public boolean cadastro2(String descricao){
-
-        Denuncia denuncia = new Denuncia( bairro, rua,  comp, descricao);
- //       DenunciaDAO.denunciasDb.add(denuncia);
-        return true;
-    }    
     
     public void  atualizarstatus(){
 

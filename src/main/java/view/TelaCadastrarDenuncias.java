@@ -70,7 +70,7 @@ public class TelaCadastrarDenuncias extends javax.swing.JFrame {
         textoComp.setRows(5);
         jScrollPane1.setViewportView(textoComp);
 
-        nextButton.setText("Próximo");
+        nextButton.setText("Finalizar");
         nextButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nextButtonActionPerformed(evt);
