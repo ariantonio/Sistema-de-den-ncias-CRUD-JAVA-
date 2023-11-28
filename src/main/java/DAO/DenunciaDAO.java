@@ -1,5 +1,6 @@
 package DAO;
 
+import model.Cidadao;
 import model.Denuncia;
 import org.jetbrains.annotations.NotNull;
 
@@ -46,6 +47,28 @@ public class DenunciaDAO {
         }
         return denunciasDb;
     }
+
+   /* public List<Cidadao> listarById() {
+        String sql = "SELECT * FROM Tbl_Cidadao ";
+        List<Cidadao> cidadaoDb = new ArrayList<>();
+        try {
+            PreparedStatement stmt = super.getConnection().prepareStatement(sql);
+            ResultSet resultSet = stmt.executeQuery();
+            while (resultSet.next()){
+                Cidadao cidadao = new Cidadao();
+                cidadao.setId(resultSet.getInt("id_Cidadao"));
+                cidadao.setData_nascimento(String.valueOf(resultSet.getDate("dt_nascimento")));
+                cidadao.setNome(resultSet.getString("nome"));
+                cidadao.setSenha(resultSet.getString("senha"));
+                cidadao.setEmail(resultSet.getString("email"));
+                cidadaoDb.add(cidadao);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return cidadaoDb;
+    }*/
+
     public boolean inserir(@NotNull Denuncia denuncia){
         String sql = "INSERT INTO Tbl_Denuncia(descrição, status_atualizacao, localizacao, imagem_anexada) VALUES(?, ?, ?, ?)";
         try {
