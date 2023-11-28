@@ -53,7 +53,7 @@ public class DenunciaDAO {
             stmt.setString(1, denuncia.getDescricao());
             stmt.setString(2, denuncia.getStatus());
             stmt.setString(3, denuncia.getLocalizacao());
-            stmt.setString(4, denuncia.getFoto().toString());
+            stmt.setString(4, null);
             stmt.execute();
             return true;
         } catch (SQLException e) {

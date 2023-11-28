@@ -35,7 +35,7 @@ id_Tipo_de_problema int auto_increment not null primary key,
 descrição varchar(2000) not null,
 status_atualizacao varchar(40) not null,
 localizacao varchar(250) not null,
-imagem_anexada longblob NOT NULL
+imagem_anexada longblob
 );
 #------------------------------------
 Select * from Tbl_Cidadao;

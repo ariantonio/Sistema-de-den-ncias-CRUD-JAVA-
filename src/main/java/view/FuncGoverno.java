@@ -1,14 +1,13 @@
 
 package view;
-import java.awt.Color;
-import java.awt.Font;
-import javax.swing.*; 
+
+import model.FuncionarioGoverno;
+
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
-import model.FuncionarioGoverno;
 
 
 public class FuncGoverno extends JFrame{

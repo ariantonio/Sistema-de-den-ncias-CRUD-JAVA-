@@ -4,11 +4,12 @@
  */
 package view;
 
+import model.Denuncia;
+
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
 import java.util.List;
-import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
-import model.Denuncia;
 
 /**
  *
@@ -49,7 +50,7 @@ public class TelaConsultarDenuncias extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jTableDenuncias.setModel(new javax.swing.table.DefaultTableModel(
+        jTableDenuncias.setModel(new DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -61,7 +62,7 @@ public class TelaConsultarDenuncias extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class
+                Integer.class, String.class, String.class, Object.class, String.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false

@@ -4,11 +4,12 @@
  */
 package view;
 
+import model.Usuario;
+
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
 import java.util.List;
-import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
-import model.Usuario;
 
 /**
  *
@@ -49,7 +50,7 @@ public class TelaConsultarUsuarios extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jTableUsuarios.setModel(new javax.swing.table.DefaultTableModel(
+        jTableUsuarios.setModel(new DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -61,7 +62,7 @@ public class TelaConsultarUsuarios extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class
+                Integer.class, String.class, String.class, Object.class, String.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false
@@ -175,9 +176,20 @@ public class TelaConsultarUsuarios extends javax.swing.JFrame {
 
     public void carregarTabela() {
 
-    DefaultTableModel model = (DefaultTableModel) this.jTableUsuarios.getModel();
-    model.setNumRows(0);
+        DefaultTableModel model = (DefaultTableModel) this.jTableUsuarios.getModel();
+        model.setNumRows(0);
 
+        List<Usuario> lista = new ArrayList<>();
+        lista = usuario.getLista();
+        
+        for (Usuario u : lista){
+            model.addRow(new Object[]{
+            u.getId(),
+            u.getNome(),
+            u.getIdade(),
+            u.getEmail()            
+            });
+        }
     }
     
     private void eraseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eraseButtonActionPerformed

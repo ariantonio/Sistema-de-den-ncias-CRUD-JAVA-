@@ -4,30 +4,29 @@
  */
 package view;
 
-import controller.DenunciaService;
 import model.Denuncia;
-import java.text.ParseException;
+
+import javax.swing.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 
 
 /**
  *
  * @author User
  */
-public class TelaCadastrarDenuncias1 extends javax.swing.JFrame {
+public class TelaCadastrarDenuncias extends javax.swing.JFrame {
 
     /**
      * Creates new form CadastrarDenuncias
      */
 
-    private Denuncia denuncia1;
+    private Denuncia denuncia;
     
     
-    public TelaCadastrarDenuncias1() {       
+    public TelaCadastrarDenuncias() {       
         initComponents();
-        this.denuncia1 = new Denuncia();
+        this.denuncia = new Denuncia();
     }
 
     /**
@@ -49,6 +48,9 @@ public class TelaCadastrarDenuncias1 extends javax.swing.JFrame {
         textoComp = new javax.swing.JTextArea();
         nextButton = new javax.swing.JButton();
         exitButton = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        textoDesc = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastrar nova denúncia");
@@ -81,27 +83,36 @@ public class TelaCadastrarDenuncias1 extends javax.swing.JFrame {
             }
         });
 
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel5.setText("Descrição do Problema:");
+
+        textoDesc.setColumns(20);
+        textoDesc.setRows(5);
+        jScrollPane2.setViewportView(textoDesc);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(exitButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(nextButton))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 414, Short.MAX_VALUE)
+                    .addComponent(jLabel5)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(exitButton)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(nextButton))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 414, Short.MAX_VALUE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(textoBairro, javax.swing.GroupLayout.DEFAULT_SIZE, 414, Short.MAX_VALUE)
                             .addComponent(jLabel1)
                             .addComponent(textoRua)
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -120,11 +131,15 @@ public class TelaCadastrarDenuncias1 extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nextButton)
                     .addComponent(exitButton))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addGap(23, 23, 23))
         );
 
         pack();
@@ -136,6 +151,8 @@ public class TelaCadastrarDenuncias1 extends javax.swing.JFrame {
         String bairro = "";
         String rua = "";
         String comp = "";
+        String desc = "";
+
         
         try{
             if (this.textoBairro.getText().length() < 2){
@@ -154,21 +171,23 @@ public class TelaCadastrarDenuncias1 extends javax.swing.JFrame {
            
                 comp = this.textoComp.getText();
             
-            if(this.denuncia1.cadastro1(bairro,rua,comp)){
-                
+            if (this.textoDesc.getText().length() < 10){
+                throw new Mensagens("Preencha a descrição do problema.");
+
+            } else {
+                desc = this.textoDesc.getText();
+            }
+
+            if(this.denuncia.cadastro(bairro,rua,comp,desc)){
+                JOptionPane.showMessageDialog(rootPane, "Sua denúncia foi cadastrada!");
                 this.dispose();
-                TelaCadastrarDenuncias2 tela2 = new TelaCadastrarDenuncias2();
-                tela2.setVisible(true);
                 
             }        
                 
         } catch (Mensagens erro){
             JOptionPane.showMessageDialog(null, erro.getMessage());
         }
-
-        Denuncia denuncia = new Denuncia();
-        DenunciaService denunciaService = new DenunciaService();
-        //denunciaService.registraDenuncia();
+        
 
     }//GEN-LAST:event_nextButtonActionPerformed
 
@@ -198,14 +217,18 @@ public class TelaCadastrarDenuncias1 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastrarDenuncias1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            Logger.getLogger(TelaCadastrarDenuncias.class.getName()).log(Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastrarDenuncias1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            Logger.getLogger(TelaCadastrarDenuncias.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastrarDenuncias1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            Logger.getLogger(TelaCadastrarDenuncias.class.getName()).log(Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaCadastrarDenuncias1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            Logger.getLogger(TelaCadastrarDenuncias.class.getName()).log(Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -214,7 +237,7 @@ public class TelaCadastrarDenuncias1 extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaCadastrarDenuncias1().setVisible(true);
+                new TelaCadastrarDenuncias().setVisible(true);
             }
         });
     }
@@ -225,10 +248,13 @@ public class TelaCadastrarDenuncias1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton nextButton;
     private javax.swing.JTextField textoBairro;
     private javax.swing.JTextArea textoComp;
+    private javax.swing.JTextArea textoDesc;
     private javax.swing.JTextField textoRua;
     // End of variables declaration//GEN-END:variables
 }

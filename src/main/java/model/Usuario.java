@@ -1,5 +1,9 @@
 package model;
 
+import controller.CidadaoService;
+
+import java.util.List;
+
 public class Usuario {
     private int id;
     private String nome;
@@ -66,5 +70,12 @@ public class Usuario {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public List getLista(){
+        CidadaoService cidadaoService = new CidadaoService();
+        List<Cidadao> listaCidadao = cidadaoService.listarCidadao();
+
+        return listaCidadao;
     }
 }

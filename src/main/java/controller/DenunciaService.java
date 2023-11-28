@@ -6,12 +6,14 @@ import model.Cidadao;
 import model.Denuncia;
 
 public class DenunciaService {
-    Denuncia denuncia = new Denuncia();
+    Denuncia denuncia;
 
     public boolean registraDenuncia(Denuncia denuncia){
         DenunciaDAO denunciaDAO = new DenunciaDAO();
         return denunciaDAO.inserir(denuncia);
     }
+
+
 
     public Denuncia getDenuncia() {
         return denuncia;

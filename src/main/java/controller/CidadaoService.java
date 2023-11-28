@@ -3,6 +3,8 @@ package controller;
 import DAO.CidadaoDAO;
 import model.Cidadao;
 
+import java.util.List;
+
 public class CidadaoService {
     Cidadao cidadao = new Cidadao();
     public boolean registraCidadao(Cidadao cidadao){
@@ -18,9 +20,13 @@ public class CidadaoService {
             return false;
         }
     }
-        public boolean alteraCidadao(Cidadao cidadao){
+    public boolean alteraCidadao(Cidadao cidadao){
         CidadaoDAO cidadaoDAO = new CidadaoDAO();
         return cidadaoDAO.alterar(cidadao);
+    }
+    public List<Cidadao> listarCidadao(){
+        CidadaoDAO cidadaoDAO = new CidadaoDAO();
+        return cidadaoDAO.listar();
     }
 
 }
