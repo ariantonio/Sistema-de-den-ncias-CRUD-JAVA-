@@ -26,6 +26,11 @@ public class CidadaoService {
             return false;
         }
     }
+    
+    public boolean apagarUsuario(int id) {
+        CidadaoDAO cidadaoDAO = new CidadaoDAO();
+        return cidadaoDAO.remover(id);
+    }
 
     public boolean alteraCidadao(Cidadao cidadao) {
         CidadaoDAO cidadaoDAO = new CidadaoDAO();

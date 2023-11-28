@@ -94,11 +94,12 @@ public class CidadaoDAO extends UsuarioDAO {
 
     @Override
     public boolean remover(int id) {
-        String sql = "DELETE FROM clientes Where id=?";
+        String sql = "DELETE FROM Tbl_Cidadao Where id_Cidadao=?";
         try {
             PreparedStatement stmt = super.getConnection().prepareStatement(sql);
             stmt.setInt(1, id);
             stmt.execute();
+            System.out.println("usuário apagada!");
             return true;
         } catch (SQLException e) {
             throw new RuntimeException(e);

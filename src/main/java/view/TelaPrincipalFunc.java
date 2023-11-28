@@ -44,7 +44,7 @@ public class TelaPrincipalFunc extends javax.swing.JFrame {
         jMenuItem2.setText("jMenuItem2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Se liga cidadão!");
+        setTitle("Se liga, cidadão!");
 
         denunciasButton.setText("Consultar");
 
@@ -138,6 +138,8 @@ public class TelaPrincipalFunc extends javax.swing.JFrame {
 
     private void conUsuarioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_conUsuarioButtonActionPerformed
         // TODO add your handling code here:
+        TelaConsultarUsuarios telausuarios = new TelaConsultarUsuarios();
+        telausuarios.setVisible(true);
     }//GEN-LAST:event_conUsuarioButtonActionPerformed
 
     /**
