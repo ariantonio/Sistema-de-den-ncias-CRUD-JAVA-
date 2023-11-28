@@ -92,15 +92,17 @@ public class TelaConsultarDenuncias extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jTableDenuncias.setModel(new javax.swing.table.DefaultTableModel(
-                new Object[][]{
-                        {null, null, null},
-                        {null, null, null},
-                        {null, null, null},
-                        {null, null, null}
-                },
-                new String[]{
-                        "ID", "Localização", "Desc."
-                }
+
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "ID", "Localização Bairro/Rua/Comp", "Desc."
+            }
+
         ) {
             Class[] types = new Class[]{
                     java.lang.Integer.class, java.lang.String.class, java.lang.String.class

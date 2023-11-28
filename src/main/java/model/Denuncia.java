@@ -59,6 +59,7 @@ public class Denuncia {
         return true;
     }
 
+
     public String getLocalizacao() {
         return bairro + rua + comp;
     }
@@ -146,6 +147,7 @@ public class Denuncia {
 
     public void setCidadiaId(int cidadiaId) {
         this.cidadaoId = cidadiaId;
+
     }
 
     @Override
