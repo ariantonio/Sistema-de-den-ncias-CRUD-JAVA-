@@ -1,6 +1,5 @@
 package model;
 
-import DAO.DenunciaDAO;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,12 +27,13 @@ public class Denuncia {
      // DenunciaDAO.denunciasDb;
      return null;
     }
-     
+
     public boolean cadastro( String bairro,String rua, String comp, String descricao){
         this.bairro = bairro;
         this.rua = rua;
         this.comp = comp;
         this.descricao = descricao;
+
         
         return true;
     }
@@ -62,8 +62,9 @@ public class Denuncia {
         return descricao;
     }
 
-    public void setDescricao(String descricao) {
+    public Denuncia setDescricao(String descricao) {
         this.descricao = descricao;
+        return null;
     }
 
     public List<String> getFoto() {
@@ -106,4 +107,19 @@ public class Denuncia {
         this.status = status;
     }
 
+    @Override
+    public String toString() {
+        return "Denuncia{" +
+                "id=" + id +
+                ", tipoDeProblema='" + tipoDeProblema + '\'' +
+                ", descricao='" + descricao + '\'' +
+                ", foto=" + foto +
+                ", rua='" + rua + '\'' +
+                ", bairro='" + bairro + '\'' +
+                ", comp='" + comp + '\'' +
+                ", status='" + status + '\'' +
+                ", lista=" + getLista() +
+                ", localizacao='" + getLocalizacao() + '\'' +
+                '}';
+    }
 }

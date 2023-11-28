@@ -1,6 +1,5 @@
 package view;
 import controller.CidadaoService;
-import model.Cidadao;
 
 import javax.swing.*;
 import java.awt.*;

@@ -4,6 +4,10 @@
  */
 package view;
 
+import model.Usuario;
+
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -52,7 +56,7 @@ public class TelaConsultarUsuarios extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Consultar usuários");
 
-        jTableUsuarios.setModel(new javax.swing.table.DefaultTableModel(
+        jTableUsuarios.setModel(new DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -64,7 +68,9 @@ public class TelaConsultarUsuarios extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
+
                 java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
+
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false

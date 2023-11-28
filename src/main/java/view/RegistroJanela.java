@@ -1,22 +1,20 @@
 package view;
 
-import java.awt.Color;
-import java.awt.Font;
-import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.text.ParseException;
-import java.util.Arrays;
-
 import controller.CidadaoService;
 import model.Cidadao;
 
+import javax.swing.*;
 import javax.swing.text.MaskFormatter;
-import java.util.Date;
-import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
-import java.time.ZoneId;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.temporal.ChronoUnit;
+import java.util.Arrays;
+import java.util.Date;
 
 public class RegistroJanela extends JFrame {
     public RegistroJanela() {

@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+import java.util.List;
+
 public class CidadaoService {
     Cidadao cidadao = new Cidadao();
     public boolean registraCidadao(Cidadao cidadao){
@@ -25,15 +27,8 @@ public class CidadaoService {
         CidadaoDAO cidadaoDAO = new CidadaoDAO();
         return cidadaoDAO.alterar(cidadao);
     }
-        
     public List<Cidadao> listarCidadao(){
         CidadaoDAO cidadaoDAO = new CidadaoDAO();
         return cidadaoDAO.listar();
     }
-/*      
-    public boolean removeCidadao(Cidadao id){
-        CidadaoDAO cidadaoDAO = new CidadaoDAO();
-        return cidadaoDAO.remover();
-    }
-/*
 }

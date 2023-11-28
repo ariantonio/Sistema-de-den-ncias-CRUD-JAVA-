@@ -11,7 +11,6 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import model.Denuncia;
 
-
 /**
  *
  * @author User
@@ -188,7 +187,11 @@ public class TelaCadastrarDenuncias extends javax.swing.JFrame {
         } catch (Mensagens erro){
             JOptionPane.showMessageDialog(null, erro.getMessage());
         }
-        
+
+        DenunciaService denunciaService = new DenunciaService();
+        Denuncia denuncia = new  Denuncia(bairro,rua,comp,desc);
+        denunciaService.registraDenuncia(denuncia);
+
 
     }//GEN-LAST:event_nextButtonActionPerformed
 
@@ -218,6 +221,7 @@ public class TelaCadastrarDenuncias extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
+
             java.util.logging.Logger.getLogger(TelaCadastrarDenuncias.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
             java.util.logging.Logger.getLogger(TelaCadastrarDenuncias.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
@@ -225,6 +229,14 @@ public class TelaCadastrarDenuncias extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(TelaCadastrarDenuncias.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(TelaCadastrarDenuncias.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            Logger.getLogger(TelaCadastrarDenuncias.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            Logger.getLogger(TelaCadastrarDenuncias.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            Logger.getLogger(TelaCadastrarDenuncias.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            Logger.getLogger(TelaCadastrarDenuncias.class.getName()).log(Level.SEVERE, null, ex);
+
         }
         //</editor-fold>
         //</editor-fold>
