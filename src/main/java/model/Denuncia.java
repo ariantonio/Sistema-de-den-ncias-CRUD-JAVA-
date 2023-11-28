@@ -46,7 +46,7 @@ public class Denuncia {
     public String getLocalizacao() {
         return rua + bairro + comp;
     }
-    
+
     public void  atualizarstatus(){
 
     }

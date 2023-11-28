@@ -2,6 +2,9 @@ package controller;
 
 import DAO.CidadaoDAO;
 import model.Cidadao;
+import java.util.ArrayList;
+import java.util.List;
+
 
 import java.util.List;
 
@@ -28,5 +31,4 @@ public class CidadaoService {
         CidadaoDAO cidadaoDAO = new CidadaoDAO();
         return cidadaoDAO.listar();
     }
-
 }

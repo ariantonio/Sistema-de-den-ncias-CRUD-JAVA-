@@ -1,7 +1,8 @@
 package model;
 
+import DAO.CidadaoDAO;
+
 public class Cidadao extends Usuario{
-    private String data_nascimento;
 
     public void cadastrar(){
 
@@ -20,11 +21,4 @@ public class Cidadao extends Usuario{
 
     }
 
-    public String getData_nascimento() {
-        return data_nascimento;
-    }
-
-    public void setData_nascimento(String data_nascimento) {
-        this.data_nascimento = data_nascimento;
-    }
 }
