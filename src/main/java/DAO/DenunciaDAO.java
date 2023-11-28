@@ -38,7 +38,7 @@ public class DenunciaDAO {
                 */
 
                 denuncia.setDescricao(resultSet.getString("descrição"));
-                denuncia.setBairro(resultSet.getString("localizacao"));
+                denuncia.setLocalizacao(resultSet.getString("localizacao"));
  //               denuncia.setRua(resultSet.getString("rua"));
  //               denuncia.setComp(resultSet.getString("complemento"));
  //               denuncia.setStatus(resultSet.getString("status"));
@@ -89,7 +89,16 @@ public class DenunciaDAO {
     public boolean alterar(Denuncia denuncia){
         return false;
     }
-    public boolean remover(int id){
-        return false;
+    public boolean remover(int id) {
+        String sql = "DELETE FROM Tbl_Denuncia WHERE id_Denuncia=?";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.setInt(1, id);
+            stmt.execute();
+            System.out.println("denuncia apagada!");
+            return true;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
