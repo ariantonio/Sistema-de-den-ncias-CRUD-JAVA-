@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cac9a311-7b5b-446e-8684-7941eb956bef" name="Changes" comment="modificaçoes leo">
+    <list default="true" id="cac9a311-7b5b-446e-8684-7941eb956bef" name="Changes" comment="cadastro denuncia no banco de dados">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/SQL/A3_PSC.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/SQL/A3_PSC.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/DenunciaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/DenunciaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/TelaCadastrarDenuncias.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/TelaCadastrarDenuncias.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,12 +76,12 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.Principal">
-    <configuration name="LoginScreen" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="view.LoginScreen" />
+    <configuration name="Principal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="principal.Principal" />
       <module name="A3" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="view.*" />
+          <option name="PATTERN" value="principal.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -92,12 +89,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Principal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="principal.Principal" />
+    <configuration name="TelaConsultarUsuarios" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="view.TelaConsultarUsuarios" />
       <module name="A3" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="principal.*" />
+          <option name="PATTERN" value="view.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -147,10 +144,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Principal" />
+        <item itemvalue="Application.TelaConsultarUsuarios" />
         <item itemvalue="Application.TelaPerfilU" />
         <item itemvalue="Application.TelaDeLogin" />
         <item itemvalue="Application.TelaLogin" />
-        <item itemvalue="Application.LoginScreen" />
       </list>
     </recent_temporary>
   </component>
@@ -219,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701133501380</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="cadastro denuncia no banco de dados">
+      <created>1701134893057</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1701134893057</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -253,7 +257,8 @@
     <MESSAGE value="login do cidadão a partir dos dados no banco de dados" />
     <MESSAGE value="DenunciaService" />
     <MESSAGE value="modificaçoes leo" />
-    <option name="LAST_COMMIT_MESSAGE" value="modificaçoes leo" />
+    <MESSAGE value="cadastro denuncia no banco de dados" />
+    <option name="LAST_COMMIT_MESSAGE" value="cadastro denuncia no banco de dados" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

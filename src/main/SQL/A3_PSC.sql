@@ -11,7 +11,7 @@ senha varchar(8) not null
 );
 
 create table Tbl_Fun_GOV(
-id_Cidadao int auto_increment not null primary key,
+id_Fun_GOV int auto_increment not null primary key,
 nome varchar(100) not null,
 orgao varchar(20) not null,
 cargo varchar(40) not null,
@@ -21,7 +21,7 @@ senha varchar(8) not null
 );
 
 create table Tbl_Politico(
-id_Cidadao int auto_increment not null primary key,
+id_Politico int auto_increment not null primary key,
 nome varchar(100) not null,
 filiacao varchar(10) not null,
 cargo varchar(40) not null,
