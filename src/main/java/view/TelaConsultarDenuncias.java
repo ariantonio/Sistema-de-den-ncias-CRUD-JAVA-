@@ -264,6 +264,22 @@ public class TelaConsultarDenuncias extends javax.swing.JFrame {
         // TODO add your handling code here:
         saveButton.setVisible(true);
 
+        //com o botão editar ele autera a denúncia no banco de dados (leo não ciou uma ação para o botão salvar)
+        int option = JOptionPane.showConfirmDialog(this, "Deseja realmente editar a denúncia?", "Confirmação", JOptionPane.YES_NO_OPTION);
+        int id;
+        String loc;
+        String desc;
+        DenunciaService denunciaService = new DenunciaService();
+
+        if (option == JOptionPane.YES_OPTION) {
+            loc = this.campoLoc.getText();
+            desc = this.campoDesc.getText();
+            id = Integer.parseInt(this.campoId.getText());
+            Denuncia denuncia = new Denuncia(id, desc, loc);
+
+            denunciaService.editarDenuncia(denuncia);
+            this.carregarTabela();
+        }
 
     }//GEN-LAST:event_editButtonActionPerformed
 
@@ -293,6 +309,7 @@ public class TelaConsultarDenuncias extends javax.swing.JFrame {
 
         }
     }//GEN-LAST:event_jTableDenunciasMouseClicked
+
     private javax.swing.JButton saveButton;
     // End of variables declaration//GEN-END:variables
 }
