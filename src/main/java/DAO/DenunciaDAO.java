@@ -74,6 +74,7 @@ public class DenunciaDAO {
     }*/
 
     public boolean inserir(@NotNull Denuncia denuncia) {
+        //String sql = "INSERT INTO Tbl_Denuncia(descrição, status_atualizacao, localizacao, imagem_anexada, fk_id_Cidadao) VALUES(?, ?, ?, ?,?)";
         String sql = "INSERT INTO Tbl_Denuncia(descrição, status_atualizacao, localizacao, imagem_anexada) VALUES(?, ?, ?, ?)";
         try {
             PreparedStatement stmt = connection.prepareStatement(sql);
@@ -81,6 +82,7 @@ public class DenunciaDAO {
             stmt.setString(2, denuncia.getStatus());
             stmt.setString(3, denuncia.getLocalizacao());
             stmt.setString(4, null);
+            //stmt.setInt(5, denuncia.getCidadiaId());
             stmt.execute();
             System.out.println("cadastro da denuncia bem sucedida");
             return true;

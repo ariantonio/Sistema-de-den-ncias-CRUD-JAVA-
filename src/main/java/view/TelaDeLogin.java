@@ -1,5 +1,7 @@
 package view;
+
 import controller.CidadaoService;
+import model.Cidadao;
 
 import javax.swing.*;
 import java.awt.*;
@@ -8,10 +10,13 @@ import java.awt.event.ActionListener;
 import java.awt.geom.RoundRectangle2D;
 
 
-public class TelaDeLogin extends JFrame{
-    
-     public TelaDeLogin(){
-        
+public class TelaDeLogin extends JFrame {
+
+    Cidadao cidadao = new Cidadao();
+
+    public TelaDeLogin() {
+
+
         JFrame frame = new JFrame("Tela de Login");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(500, 500);
@@ -19,7 +24,7 @@ public class TelaDeLogin extends JFrame{
         frame.setUndecorated(true);
         frame.setLocationRelativeTo(null);
         frame.setShape(new RoundRectangle2D.Double(0, 0, frame.getWidth(), frame.getHeight(), 30, 30));
-        
+
         JPanel panel = new JPanel();
         frame.add(panel);
         panel.setLayout(null);
@@ -54,74 +59,80 @@ public class TelaDeLogin extends JFrame{
         loginButton.setBackground(new Color(0, 128, 255)); // Azul
         loginButton.setForeground(Color.WHITE);
         panel.add(loginButton);
-        
+
         JButton exitButton = new JButton("Sair");
         exitButton.setBounds(390, 420, 100, 30);
-        exitButton.setBackground(new Color(0,0,0));
+        exitButton.setBackground(new Color(0, 0, 0));
         exitButton.setForeground(Color.WHITE);
         panel.add(exitButton);
-        
+
         JButton registerButton = new JButton("Cadastre-se");
         registerButton.setBounds(200, 200, 110, 20);
         registerButton.setForeground(Color.GRAY);
         panel.add(registerButton);
-        
+
         JButton govButton = new JButton("Sou funcionário do governo");
-        govButton.setBounds(10,420, 190, 30);
-        govButton.setBackground(new Color(0,0,0));
+        govButton.setBounds(10, 420, 190, 30);
+        govButton.setBackground(new Color(0, 0, 0));
         govButton.setForeground(Color.WHITE);
         panel.add(govButton);
-        
-    
+
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 CidadaoService cidadaoService = new CidadaoService();
                 String username = usernameField.getText();
                 char[] password = passwordField.getPassword();
-                // Faça a validação aqui (substitua isso pela lógica real de autenticação)
-                if (username.isEmpty() || password.length == 0){
+                if (username.isEmpty() || password.length == 0) {
                     JOptionPane.showMessageDialog(rootPane, "Preencha todos os campos");
                 }
-                if (cidadaoService.consultaCidadao(username,String.valueOf(password))) {
+
+
+                if (cidadaoService.consultaCidadao(username, String.valueOf(password))) {
+                    cidadao = cidadaoService.getCidadao();
                     JOptionPane.showMessageDialog(frame, "Login bem-sucedido!");
                     frame.dispose();
                     TelaPrincipalUsuario telausuario = new TelaPrincipalUsuario();
-                    telausuario.setVisible(true);        
+                    telausuario.setVisible(true);
                 } else {
                     JOptionPane.showMessageDialog(frame, "Nome de usuário ou senha incorretos.");
                 }
                 usernameField.setText("");
                 passwordField.setText("");
-               
+
             }
         });
-        
-        exitButton.addActionListener(new ActionListener(){
+
+        exitButton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e){
+            public void actionPerformed(ActionEvent e) {
                 System.exit(0);
             }
-            });
-        
-        registerButton.addActionListener(new ActionListener(){
+        });
+
+        registerButton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e){
-               RegistroJanela cadastro = new RegistroJanela();        
+            public void actionPerformed(ActionEvent e) {
+                RegistroJanela cadastro = new RegistroJanela();
             }
         });
-        
-        govButton.addActionListener(new ActionListener(){
-            @Override 
-            public void actionPerformed(ActionEvent e){
-               frame.dispose();
-               FuncGoverno funcionario = new FuncGoverno();
-           }
+
+        govButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+                FuncGoverno funcionario = new FuncGoverno();
+            }
         });
 
         frame.setVisible(true);
     }
-     public static void main(String[] args){
 
-}
+    public static void main(String[] args) {
+
+    }
+
+    public Cidadao getCidadao() {
+        return this.cidadao;
+    }
 }

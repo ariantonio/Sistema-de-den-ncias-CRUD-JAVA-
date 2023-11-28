@@ -14,19 +14,28 @@ public class Denuncia {
     private String bairro;
     private String comp;
     private String status;
-
+    private int cidadaoId;
     private String localizacao;
 
     public Denuncia() {
     }
 
 
-    public Denuncia(String bairro, String rua, String comp, String descricao) {
-        this.bairro = bairro;
-        this.rua = rua;
-        this.comp = comp;
+   /* public Denuncia(String descricao, String rua, String bairro, String comp, int cidadaoId) {
         this.descricao = descricao;
+        this.rua = rua;
+        this.bairro = bairro;
+        this.comp = comp;
+        this.cidadaoId = cidadaoId;
+    }*/
+
+    public Denuncia(String descricao, String rua, String bairro, String comp) {
+        this.descricao = descricao;
+        this.rua = rua;
+        this.bairro = bairro;
+        this.comp = comp;
     }
+
 
     public Denuncia(int id, String descricao, String localizacao) {
         this.id = id;
@@ -129,6 +138,14 @@ public class Denuncia {
 
     public void atualizarstatus() {
 
+    }
+
+    public int getCidadiaId() {
+        return cidadaoId;
+    }
+
+    public void setCidadiaId(int cidadiaId) {
+        this.cidadaoId = cidadiaId;
     }
 
     @Override

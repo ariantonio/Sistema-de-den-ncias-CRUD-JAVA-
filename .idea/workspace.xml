@@ -7,9 +7,10 @@
     <list default="true" id="cac9a311-7b5b-446e-8684-7941eb956bef" name="Changes" comment="deletar deenuncia">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAO/DenunciaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/DenunciaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/DenunciaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/DenunciaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CidadaoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CidadaoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Denuncia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Denuncia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/TelaConsultarDenuncias.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/TelaConsultarDenuncias.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/TelaCadastrarDenuncias.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/TelaCadastrarDenuncias.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/TelaDeLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/TelaDeLogin.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +85,7 @@
       <recent name="DAO" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TelaConsultarDenuncias">
+  <component name="RunManager" selected="Application.Principal">
     <configuration name="Principal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="principal.Principal" />
       <module name="A3" />
@@ -152,10 +153,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Principal" />
         <item itemvalue="Application.TelaConsultarDenuncias" />
         <item itemvalue="Application.TelaVisualizarDenuncias" />
         <item itemvalue="Application.TelaPrincipalUsuario" />
-        <item itemvalue="Application.Principal" />
         <item itemvalue="Application.TelaConsultarUsuarios" />
       </list>
     </recent_temporary>
@@ -295,7 +296,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/master" />
+                        <option value="origin/teste" />
                       </list>
                     </value>
                   </entry>
