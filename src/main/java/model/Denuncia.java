@@ -108,7 +108,7 @@ public class Denuncia {
         return  loc;
     }
     
-        public String getLocalizacaoC(){
+    public String getLocalizacaoC(){
         return  bairro;
     }
     
