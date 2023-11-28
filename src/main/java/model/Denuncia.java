@@ -1,6 +1,7 @@
 package model;
 
 import controller.DenunciaService;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,19 +14,36 @@ public class Denuncia {
     private String bairro;
     private String comp;
     private String status;
+    private int cidadaoId;
+    private String localizacao;
 
-    public Denuncia(){       
-    };
-    
-    public Denuncia(String bairro,String rua, String comp,String descricao){
-    this.bairro = bairro;
-    this.rua = rua;
-    this.comp = comp;    
-    this.descricao = descricao;
-    
+    public Denuncia() {
     }
 
-    public boolean cadastro( String bairro,String rua, String comp, String descricao){
+
+   /* public Denuncia(String descricao, String rua, String bairro, String comp, int cidadaoId) {
+        this.descricao = descricao;
+        this.rua = rua;
+        this.bairro = bairro;
+        this.comp = comp;
+        this.cidadaoId = cidadaoId;
+    }*/
+
+    public Denuncia(String descricao, String rua, String bairro, String comp) {
+        this.descricao = descricao;
+        this.rua = rua;
+        this.bairro = bairro;
+        this.comp = comp;
+    }
+
+
+    public Denuncia(int id, String descricao, String localizacao) {
+        this.id = id;
+        this.descricao = descricao;
+        this.localizacao = localizacao;
+    }
+
+    public boolean cadastro(String bairro, String rua, String comp, String descricao) {
         this.bairro = bairro;
         this.rua = rua;
         this.comp = comp;
@@ -33,17 +51,27 @@ public class Denuncia {
 
         return true;
     }
-    public boolean cadastro2(String descricao){
+
+    public boolean cadastro2(String descricao) {
         this.descricao = descricao;
-        Denuncia denuncia = new Denuncia( bairro, rua,  comp, descricao);
- //       DenunciaDAO.denunciasDb.add(denuncia);
+        Denuncia denuncia = new Denuncia(bairro, rua, comp, descricao);
+        //       DenunciaDAO.denunciasDb.add(denuncia);
         return true;
     }
 
-    public void  atualizarstatus(){
 
+    public String getLocalizacao() {
+        return bairro + rua + comp;
     }
-    
+
+    public void setLocalizacao(String localizacao) {
+        this.localizacao = localizacao;
+    }
+
+    public String getLocalizacaoC() {
+        return localizacao;
+    }
+
     public int getId() {
         return id;
     }
@@ -108,15 +136,20 @@ public class Denuncia {
     public void setStatus(String status) {
         this.status = status;
     }
-    public String getLocalizacao(){
-        String loc = bairro + "; " + rua + "; " + comp;
-        return  loc;
+
+    public void atualizarstatus() {
+
     }
-    
-    public String getLocalizacaoC(){
-        return  bairro;
+
+    public int getCidadiaId() {
+        return cidadaoId;
     }
-    
+
+    public void setCidadiaId(int cidadiaId) {
+        this.cidadaoId = cidadiaId;
+
+    }
+
     @Override
     public String toString() {
         return "Denuncia{" +
@@ -132,11 +165,11 @@ public class Denuncia {
                 ", localizacao='" + getLocalizacao() + '\'' +
                 '}';
     }
-    
+
     public List<Denuncia> getLista() {
         DenunciaService denunciaService = new DenunciaService();
         List<Denuncia> listaDenuncia = denunciaService.listarDenuncia();
-        
+
         return listaDenuncia;
-    }    
+    }
 }

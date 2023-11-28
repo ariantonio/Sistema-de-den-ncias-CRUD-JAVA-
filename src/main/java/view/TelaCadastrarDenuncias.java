@@ -190,6 +190,7 @@ public class TelaCadastrarDenuncias extends javax.swing.JFrame {
         }
 
         DenunciaService denunciaService = new DenunciaService();
+        //Denuncia denuncia = new  Denuncia(bairro,rua,comp,desc,1);
         Denuncia denuncia = new  Denuncia(bairro,rua,comp,desc);
         denunciaService.registraDenuncia(denuncia);
 

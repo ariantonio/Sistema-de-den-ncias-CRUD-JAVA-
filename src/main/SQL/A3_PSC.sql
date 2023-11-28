@@ -20,53 +20,29 @@ email varchar(100) not null,
 senha varchar(8) not null
 );
 
-create table Tbl_Politico(
-id_Politico int auto_increment not null primary key,
-nome varchar(100) not null,
-filiacao varchar(10) not null,
-cargo varchar(40) not null,
-dt_nascimento date not null,
-email varchar(100) not null,
-senha varchar(8) not null
-);
-
 create table Tbl_Denuncia(
-id_Tipo_de_problema int auto_increment not null primary key,
+id_Denuncia int auto_increment not null primary key,
 descrição varchar(2000) not null,
 status_atualizacao varchar(40),
 localizacao varchar(250) not null,
 imagem_anexada longblob
 );
-#------------------------------------
-Select * from Tbl_Cidadao;
-
-insert into Tbl_Cidadao (nome, dt_nascimento, email, senha) values ();
-#-------------------------------------
-ALTER TABLE Tbl_Fun_GOV
-ADD CONSTRAINT fk_Cidadao_fun_gov
-FOREIGN KEY (id_Fun_GOV) REFERENCES Tbl_Cidadao(id_Cidadao);
-
-ALTER TABLE Tbl_Politico
-ADD CONSTRAINT fk_Cidadao_politico
-FOREIGN KEY (id_Politico) REFERENCES Tbl_Cidadao(id_Cidadao);
-
+## ALTERAR DADO NA TABELA (NESTE CASO EM ESPECIFICO ADICIONAR FK & CONSTRAINT)
 ALTER TABLE Tbl_Cidadao
-ADD CONSTRAINT ck_tamanho_senha_Cidadao
-CHECK (LENGTH(senha) = 8);
+ADD CONSTRAINT uq_email UNIQUE (email);
 
-ALTER TABLE Tbl_Fun_GOV
-ADD CONSTRAINT ck_tamanho_senha_fun_gov
-CHECK (LENGTH(senha) = 8);
-
-ALTER TABLE Tbl_Politico
-ADD CONSTRAINT ck_tamanho_senha_politico
-CHECK (LENGTH(senha) = 8);
 
 ALTER TABLE Tbl_Denuncia
-ADD CONSTRAINT ck_status_atualizacao
-CHECK (status_atualizacao IN ('Em andamento', 'Concluída', 'Pendente'));
+ADD COLUMN fk_id_Cidadao int not null,
+ADD CONSTRAINT fk_Cidadao_Denuncia
+    FOREIGN KEY (fk_id_Cidadao)
+    REFERENCES Tbl_Cidadao(id_Cidadao);
 
-ALTER TABLE Tbl_Denuncia
-ADD CONSTRAINT pk_id_tipo_problema
-PRIMARY KEY (id_Tipo_de_problema);
-#--------------------------------------
+## INSERIR INFORMACAO NO BANCO
+##Select * from Tbl_Cidadao;
+##INSERT INTO Tbl_Cidadao (nome, dt_nascimento, email, senha)
+##VALUES ('VITOR', '1991-02-03', 'VITOR@example.com', '12345678');
+
+## CONSULTA NO BANCO
+##select * from Tbl_Cidadao
+##where nome = 'VITOR';
