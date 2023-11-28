@@ -138,6 +138,8 @@ public class TelaPrincipalFunc extends javax.swing.JFrame {
 
     private void conUsuarioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_conUsuarioButtonActionPerformed
         // TODO add your handling code here:
+        TelaConsultarUsuarios telausuarios = new TelaConsultarUsuarios();
+        telausuarios.setVisible(true);
     }//GEN-LAST:event_conUsuarioButtonActionPerformed
 
     /**

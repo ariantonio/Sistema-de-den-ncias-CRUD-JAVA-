@@ -37,7 +37,6 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
         profileButton = new javax.swing.JMenu();
         editProfileButton = new javax.swing.JMenuItem();
         quitButton = new javax.swing.JMenuItem();
-        configButton = new javax.swing.JMenu();
         exitButton = new javax.swing.JMenu();
 
         jMenuItem1.setText("jMenuItem1");
@@ -88,14 +87,6 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
 
         jMenuBar1.add(profileButton);
 
-        configButton.setText("Configurações");
-        configButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                configButtonActionPerformed(evt);
-            }
-        });
-        jMenuBar1.add(configButton);
-
         exitButton.setText("Sair");
         exitButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -120,10 +111,6 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void configButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_configButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_configButtonActionPerformed
 
     private void profileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileButtonActionPerformed
         // TODO add your handling code here:
@@ -195,7 +182,6 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem cadDenunciaButton;
     private javax.swing.JMenuItem conDenunciaButton;
-    private javax.swing.JMenu configButton;
     private javax.swing.JMenu denunciasButton;
     private javax.swing.JMenuItem editProfileButton;
     private javax.swing.JMenu exitButton;
