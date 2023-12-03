@@ -39,6 +39,7 @@ public class CidadaoDAO extends UsuarioDAO {
     public Cidadao pesquisar(String nome, String senha){
         String sql = "SELECT * FROM Tbl_Cidadao WHERE nome = ? AND senha = ?";
         Cidadao cidadaoDb = new Cidadao();
+        boolean encontrou = false;
         try {
             PreparedStatement stmt = super.getConnection().prepareStatement(sql);
             stmt.setString(1, nome);
@@ -52,13 +53,13 @@ public class CidadaoDAO extends UsuarioDAO {
                 cidadaoDb.setData_nascimento(String.valueOf(resultSet.getDate("dt_nascimento")));
                 System.out.println("login bem sucedido");
             } else  {
-                System.out.println("erro ao reguistrar cidadão do banco de dados");
+                System.out.println("erro ao registrar cidadão do banco de dados");
             }
         } catch (SQLException e) {
             System.out.println("erro ao consultar no banco de dados");
             throw new RuntimeException(e);
         }
-        return cidadaoDb;
+        return encontrou ? cidadaoDb: null;
     }
 
     public boolean inserir(@NotNull Cidadao cidadao) {

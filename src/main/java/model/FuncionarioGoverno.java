@@ -1,5 +1,5 @@
 package model;
-
+import DAO.FuncionarioGovernoDAO;
 public class FuncionarioGoverno extends Usuario {
     private String orgao;
     private String identificacao;
@@ -12,7 +12,9 @@ public class FuncionarioGoverno extends Usuario {
     
      public FuncionarioGoverno() {
     }
-
+     public FuncionarioGoverno(String nome, String senha){
+         super(nome, senha);
+     }
 
     public FuncionarioGoverno(String orgao, String identificacao, String cargo) {
         this.orgao = orgao;
